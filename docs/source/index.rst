@@ -1,4 +1,4 @@
-Welcome to the SMACC2 documentation website
+Welcome to the SMACC2 documentation site
 ===================================
 
 **Lumache** (/lu'make/) is a Python library for cooks and food lovers
