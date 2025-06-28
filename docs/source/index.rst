@@ -15,6 +15,7 @@ Contents
 .. toctree::
    :caption: Contents
 
-   getting_started/index.rst
+   getting started
    usage
    api
+   about
