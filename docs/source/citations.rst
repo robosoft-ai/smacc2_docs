@@ -35,8 +35,23 @@ Vismanis, Oskars, et al. "Robotic system for post office package handling." Appl
    }
 
 -----
+A novel control architecture for mobile robots in safety-critical applications:
 
-Yasmin, Yet another state machine:
+Schrick, Manuel, Johannes Hinckeldeyn, and Marko Thiel. "A novel control architecture for mobile robots in safety-critical applications." 2022 27th International Conference on Automation and Computing (ICAC). IEEE, 2022.
+
+.. code-block:: bash
+
+   @inproceedings{schrick2022novel,
+     title={A novel control architecture for mobile robots in safety-critical applications},
+     author={Schrick, Manuel and Hinckeldeyn, Johannes and Thiel, Marko},
+     booktitle={2022 27th International Conference on Automation and Computing (ICAC)},
+     pages={1--6},
+     year={2022},
+     organization={IEEE}
+   }
+
+-----
+Yasmin, Yet another state machine for ROS2:
 
 González-Santamarta, Miguel Á., et al. "Yasmin: Yet another state machine." Iberian Robotics conference. Cham: Springer International Publishing, 2022.
 
