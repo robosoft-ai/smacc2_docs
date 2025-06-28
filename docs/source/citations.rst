@@ -17,6 +17,7 @@ Carvalho, David, et al. "A SMACC based mission control system for autonomous und
    }
 
 -----
+
 Yasmin, Yet another state machine:
 
 González-Santamarta, Miguel Á., et al. "Yasmin: Yet another state machine." Iberian Robotics conference. Cham: Springer International Publishing, 2022.
@@ -32,7 +33,8 @@ González-Santamarta, Miguel Á., et al. "Yasmin: Yet another state machine." Ib
      number={},
      pages={1-10},
      keywords={Autonomous underwater vehicles;Robot kinematics;Roads;Operating systems;Oceans;Control systems;Libraries;AUV;mission control system;hierarchical finite state machines;mission coordination;ROS;SMACC},
-     doi={10.1109/OCEANS47191.2022.9977228}}
+     doi={10.1109/OCEANS47191.2022.9977228}
+   }
 
-----
+-----
 
