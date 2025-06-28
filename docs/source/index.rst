@@ -10,6 +10,7 @@ SMACC2 is a state machine library for robotic autonomy for ROS2 Applications.
         <div style="position: relative; padding-bottom: 0%; overflow: hidden; max-width: 100%; height: auto;">
           <iframe width="450" height="300" src="https://www.youtube.com/embed/cLhXwG6xIyM?autoplay=1&mute=1" frameborder="1" allowfullscreen></iframe>
 		   <iframe width="450" height="300" src="https://www.youtube.com/embed/y6BAqDmHEwA?autoplay=1&mute=1" frameborder="1" allowfullscreen></iframe>
+<iframe src="https://player.vimeo.com/video/645696269?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="sm_multi_stage 1280.mp4"></iframe>
         </div>
       </div>
     </h1>
