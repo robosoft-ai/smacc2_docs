@@ -2,9 +2,9 @@
 
 # -- Project information
 
-project = 'Lumache'
-copyright = '2021, Graziella'
-author = 'Graziella'
+project = 'SMACC2'
+copyright = '2025, Robosoft Inc.'
+author = 'Brett Aldrich'
 
 release = '0.1'
 version = '0.1.0'
