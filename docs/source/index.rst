@@ -10,12 +10,19 @@ how to :ref:`installation` the project.
 
    This project is under active development.
 
-Contents
---------
+#Contents
+#--------
 .. toctree::
    :caption: Contents
 
    getting started
+   concepts
+   repositories
+   demos
+   documentation
+   forums
+   troubleshooting
+   release notes
    usage
    api
    about
