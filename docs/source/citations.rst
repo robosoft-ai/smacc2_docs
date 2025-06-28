@@ -71,3 +71,34 @@ González-Santamarta, Miguel Á., et al. "Yasmin: Yet another state machine." Ib
 
 -----
 
+**ROS2 Key Challenges and Advances: A Survey of ROS2 Research, Libraries and Applications:**
+
+Al-Batati, Abdulrahman S., Anis Koubaa, and Mohamed Abdelkader. "ROS 2 Key Challenges and Advances: A Survey of ROS 2 Research, Libraries, and Applications." Preprint (2024).
+
+.. code-block:: bash
+
+   @article{al2024ros,
+     title={ROS 2 Key Challenges and Advances: A Survey of ROS 2 Research, Libraries, and Applications},
+     author={Al-Batati, Abdulrahman S and Koubaa, Anis and Abdelkader, Mohamed},
+     journal={Preprint},
+     year={2024}
+   }
+
+-----
+
+**Behavior trees and state machines in robotics applications:**
+
+Ghzouli, Razan, et al. "Behavior trees and state machines in robotics applications." IEEE Transactions on Software Engineering 49.9 (2023): 4243-4267.
+
+.. code-block:: bash
+
+   @article{ghzouli2023behavior,
+     title={Behavior trees and state machines in robotics applications},
+     author={Ghzouli, Razan and Berger, Thorsten and Johnsen, Einar Broch and Wasowski, Andrzej and Dragule, Swaib},
+     journal={IEEE Transactions on Software Engineering},
+     volume={49},
+     number={9},
+     pages={4243--4267},
+     year={2023},
+     publisher={IEEE}
+   }
