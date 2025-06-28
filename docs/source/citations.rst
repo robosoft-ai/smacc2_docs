@@ -16,7 +16,7 @@ IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS), 2021
    year = {2021}
    }
 
----
+-----
 
 Regulated Pure Pursuit Controller:
 
