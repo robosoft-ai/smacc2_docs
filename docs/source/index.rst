@@ -13,6 +13,8 @@ how to :ref:`installation` the project.
 
 .. toctree::
    :caption: Contents
+   :hidden:
+   :maxdepth: 2
 
    getting started
    concepts
