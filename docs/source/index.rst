@@ -13,6 +13,8 @@ how to :ref:`installation` the project.
 Contents
 --------
 .. toctree::
+   :caption: Contents
 
+   getting_started/index.rst
    usage
    api
