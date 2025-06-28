@@ -57,16 +57,13 @@ González-Santamarta, Miguel Á., et al. "Yasmin: Yet another state machine." Ib
 
 .. code-block:: bash
 
-   @INPROCEEDINGS{9977228,
-     author={Carvalho, David and Martins, Alfredo and Almeida, José Miguel and Silva, Eduardo},
-     booktitle={OCEANS 2022, Hampton Roads}, 
-     title={A SMACC based mission control system for autonomous underwater vehicles}, 
+   @inproceedings{gonzalez2022yasmin,
+     title={Yasmin: Yet another state machine},
+     author={Gonz{\'a}lez-Santamarta, Miguel {\'A} and Rodr{\'\i}guez-Lera, Francisco J and Matell{\'a}n-Olivera, Vicente and Fern{\'a}ndez-Llamas, Camino},
+     booktitle={Iberian Robotics conference},
+     pages={528--539},
      year={2022},
-     volume={},
-     number={},
-     pages={1-10},
-     keywords={Autonomous underwater vehicles;Robot kinematics;Roads;Operating systems;Oceans;Control systems;Libraries;AUV;mission control system;hierarchical finite state machines;mission coordination;ROS;SMACC},
-     doi={10.1109/OCEANS47191.2022.9977228}
+     organization={Springer}
    }
 
 -----
