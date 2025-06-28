@@ -1,20 +1,26 @@
 SMACC2
 ===================================
 
-SMACC2 is a state machine library for robotic autonomy for ROS2 Applications.
+SMACC2: State Machine Asynchronous C++ for ROS2
 
 .. raw:: html
 
     <h1 align="left">
       <div>
-        <div style="position: relative; padding-left: 7%; padding-bottom: 0%; overflow: hidden; max-width: 100%; height: auto;">
+        <div style="position: relative; padding-left: 6%; padding-bottom: 0%; overflow: hidden; max-width: 100%; height: auto;">
           <iframe width="450" height="300" src="https://www.youtube.com/embed/cLhXwG6xIyM?autoplay=1&mute=1" frameborder="1" allowfullscreen></iframe>
         </div>
       </div>
     </h1>
 
-Check out the :doc:`usage` section for further information, including
-how to :ref:`installation` the project.
+Welcome to the documentation for SMACC2, a high performance behavioral state machine library for robotic autonomy. 
+
+* Check out the :doc:`getting started<getting_started>` to start using SMACC2.
+* Visit the :doc:`repositories<repositories>` for links to learn about specific packages.
+* Familiarize yourself with :doc:`concepts</concepts/index>` essential to understanding SMACC2.
+* Compare the :doc:`performance </performance>` of SMACC2 on various platforms.
+* Scan through the :doc:`FAQs </faq/index>` for answers to common questions.
+* Reference the :doc:`release notes </releases/index>` for details on all updates made to Isaac ROS.
 
 .. note::
 
