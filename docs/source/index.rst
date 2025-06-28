@@ -1,7 +1,7 @@
 SMACC2
 ===================================
 
-SMACC2: State Machine Asynchronous C++ for ROS2
+SMACC2: State Machine Asynchronous C++ for ROS2 Applications
 
 .. raw:: html
 
