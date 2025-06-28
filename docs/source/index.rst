@@ -15,12 +15,12 @@ SMACC2: State Machine Asynchronous C++ for ROS2
 
 Welcome to the documentation for SMACC2, a high performance, behavioral state machine library for robotic autonomy. 
 
-* Check out the :doc:`getting started<getting_started>` to start using SMACC2.
+* Check out the :doc:`getting started<getting started>` to start using SMACC2.
 * Visit the :doc:`repositories<repositories>` for links to learn about specific packages.
-* Familiarize yourself with :doc:`concepts</concepts/index>` essential to understanding SMACC2.
-* Compare the :doc:`performance </performance>` of SMACC2 on various platforms.
-* Scan through the :doc:`FAQs </faq/index>` for answers to common questions.
-* Reference the :doc:`release notes </releases/index>` for details on all updates made to Isaac ROS.
+* Familiarize yourself with :doc:`concepts<concepts>` essential to understanding SMACC2.
+* Compare the :doc:`performance <performance>` of SMACC2 on various platforms.
+* Scan through the :doc:`FAQs <faq>` for answers to common questions.
+* Reference the :doc:`release notes <releases notes>` for details on all updates made to SMACC2.
 
 .. note::
 
