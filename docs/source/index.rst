@@ -11,7 +11,7 @@ how to :ref:`installation` the project.
    This project is under active development.
 
 #Contents
-#--------
+--------
 .. toctree::
    :caption: Contents
 
