@@ -17,11 +17,12 @@ Carvalho, David, et al. "A SMACC based mission control system for autonomous und
    }
 
 -----
+Yasmin, Yet another state machine:
 
 González-Santamarta, Miguel Á., et al. "Yasmin: Yet another state machine." Iberian Robotics conference. Cham: Springer International Publishing, 2022.
 
-
 .. code-block:: bash
+
    @INPROCEEDINGS{9977228,
      author={Carvalho, David and Martins, Alfredo and Almeida, José Miguel and Silva, Eduardo},
      booktitle={OCEANS 2022, Hampton Roads}, 
