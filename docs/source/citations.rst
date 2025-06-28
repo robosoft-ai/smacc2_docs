@@ -1,7 +1,7 @@
 Citations
 =====
 
-A SMACC based mission control system for autonomous underwater vehicles:
+**A SMACC based mission control system for autonomous underwater vehicles:**
 
 Carvalho, David, et al. "A SMACC based mission control system for autonomous underwater vehicles." OCEANS 2022, Hampton Roads. IEEE, 2022.
 
@@ -17,7 +17,8 @@ Carvalho, David, et al. "A SMACC based mission control system for autonomous und
    }
 
 -----
-Robotic system for post office package handling:
+
+**Robotic system for post office package handling:**
 
 Vismanis, Oskars, et al. "Robotic system for post office package handling." Applied Sciences 13.13 (2023): 7643.
 
@@ -35,7 +36,8 @@ Vismanis, Oskars, et al. "Robotic system for post office package handling." Appl
    }
 
 -----
-A novel control architecture for mobile robots in safety-critical applications:
+
+**A novel control architecture for mobile robots in safety-critical applications:**
 
 Schrick, Manuel, Johannes Hinckeldeyn, and Marko Thiel. "A novel control architecture for mobile robots in safety-critical applications." 2022 27th International Conference on Automation and Computing (ICAC). IEEE, 2022.
 
@@ -51,7 +53,8 @@ Schrick, Manuel, Johannes Hinckeldeyn, and Marko Thiel. "A novel control archite
    }
 
 -----
-Yasmin, Yet another state machine for ROS2:
+
+**Yasmin, Yet another state machine for ROS2:**
 
 González-Santamarta, Miguel Á., et al. "Yasmin: Yet another state machine." Iberian Robotics conference. Cham: Springer International Publishing, 2022.
 
