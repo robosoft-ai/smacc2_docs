@@ -102,3 +102,18 @@ Ghzouli, Razan, et al. "Behavior trees and state machines in robotics applicatio
      year={2023},
      publisher={IEEE}
    }
+
+-----
+
+**Integration and Evaluation of a Framework for Decision-Making in Autonomous Systems:**
+
+Kesy, Anton. Integration and Evaluation of a Framework for Decision-Making in Autonomous Systems. Diss. Hochschule Offenburg, 2024.
+
+.. code-block:: bash
+
+   @phdthesis{kesy2024integration,
+     title={Integration and Evaluation of a Framework for Decision-Making in Autonomous Systems},
+     author={Kesy, Anton},
+     year={2024},
+     school={Hochschule Offenburg}
+   }
