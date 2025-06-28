@@ -117,3 +117,17 @@ Kesy, Anton. Integration and Evaluation of a Framework for Decision-Making in Au
      year={2024},
      school={Hochschule Offenburg}
    }
+
+-----
+
+**Sampling-Based Exploration Strategies for Mobile Robot Autonomy:**
+
+Steinbrink, Marco. "Sampling-Based Exploration Strategies for Mobile Robot Autonomy." (2023).
+
+.. code-block:: bash
+
+   @article{steinbrink2023sampling,
+     title={Sampling-Based Exploration Strategies for Mobile Robot Autonomy},
+     author={Steinbrink, Marco},
+     year={2023}
+   }
