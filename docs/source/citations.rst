@@ -1,41 +1,6 @@
 Citations
 =====
 
-VSLAM and formal comparisons for service robot needs:
-
-A. Merzlyakov, S. Macenski.
-`A Comparison of Modern General-Purpose Visual SLAM Approaches <https://arxiv.org/abs/2107.07589>`_.
-IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS), 2021.
-
-.. code-block:: bash
-
-   @InProceedings{vslamComparison2021,
-   author = {Merzlyakov, Alexey and Macenski, Steven},
-   title = {A Comparison of Modern General-Purpose Visual SLAM Approaches},
-   booktitle = {2021 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)},
-   year = {2021}
-   }
-
------
-
-Regulated Pure Pursuit Controller:
-
-S. Macenski, S. Singh, F. Martin, J. Gines,
-`Regulated Pure Pursuit for Robot Path Tracking <https://arxiv.org/abs/2305.20026>`_,
-Autonomous Robots, 2023.
-
-.. code-block:: bash
-
-  @article{macenski2023regulated,
-        title={Regulated Pure Pursuit for Robot Path Tracking},
-        author={Steve Macenski and Shrijit Singh and Francisco Martin and Jonatan Gines},
-        year={2023},
-        journal = {Autonomous Robots}
-  }
-
-
------
-
 A SMACC based mission control system for autonomous underwater vehicles:
 
 Carvalho, David, et al. "A SMACC based mission control system for autonomous underwater vehicles." OCEANS 2022, Hampton Roads. IEEE, 2022.
@@ -50,7 +15,6 @@ Carvalho, David, et al. "A SMACC based mission control system for autonomous und
      year={2022},
      organization={IEEE}
    }
-
 
 -----
 
