@@ -13,7 +13,7 @@ SMACC2: State Machine Asynchronous C++ for ROS2
       </div>
     </h1>
 
-Welcome to the documentation for SMACC2, a high performance behavioral state machine library for robotic autonomy. 
+Welcome to the documentation for SMACC2, a high performance, behavioral state machine library for robotic autonomy. 
 
 * Check out the :doc:`getting started<getting_started>` to start using SMACC2.
 * Visit the :doc:`repositories<repositories>` for links to learn about specific packages.
