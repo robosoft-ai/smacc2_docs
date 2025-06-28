@@ -12,7 +12,6 @@ how to :ref:`installation` the project.
 
 Contents
 --------
-CONTENTS
 .. toctree::
 
    usage
