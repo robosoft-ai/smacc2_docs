@@ -41,3 +41,4 @@ Welcome to the documentation for SMACC2, a high performance, behavioral state ma
    troubleshooting
    release notes
    about
+   citations
