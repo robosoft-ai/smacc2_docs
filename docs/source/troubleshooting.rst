@@ -14,4 +14,8 @@ Build Errors
 Runtime Errors
 ----------------
 
+`Support for multiple CBs subscribed to single client <https://github.com/robosoft-ai/SMACC/issues/73>`_
+
+`Transition back to previous state using history <https://github.com/robosoft-ai/SMACC/issues/52>`_
+
 
