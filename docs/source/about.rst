@@ -1,25 +1,13 @@
 About
 =====
 
-.. _installation:
-
 License
 ------------
 
-To use Lumache, first install it using pip:
-
-.. code-block:: console
-
-   (.venv) $ pip install lumache
+SMACC2 is licensed under the `Apache 2.0 License <https://www.apache.org/licenses/LICENSE-2.0>`_
 
 Contact
 ----------------
 
-To retrieve a list of random ingredients,
-you can use the ``lumache.get_random_ingredients()`` function:
-
-.. image:: images/test.jpg
-    :width: 300px
-    :align: center
-    :alt: Test
+For more information please contact techsupport@robosoft.ai
 
