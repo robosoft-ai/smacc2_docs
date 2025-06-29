@@ -1,34 +1,22 @@
 Repositiories
 =====
 
-.. _installation:
-
-Installation
+SMACC
 ------------
 
-To use Lumache, first install it using pip:
+The SMACC Repository for ROS1 can be found here:
 
 .. code-block:: console
 
-   (.venv) $ pip install lumache
+   https://github.com/robosoft-ai/SMACC
 
-Creating recipes
+SMACC2
 ----------------
 
-To retrieve a list of random ingredients,
-you can use the ``lumache.get_random_ingredients()`` function:
+The SMACC2 Repository for ROS2 can be found here:
 
-.. autofunction:: lumache.get_random_ingredients
+.. code-block:: console
 
-The ``kind`` parameter should be either ``"meat"``, ``"fish"``,
-or ``"veggies"``. Otherwise, :py:func:`lumache.get_random_ingredients`
-will raise an exception.
+   https://github.com/robosoft-ai/SMACC2
 
-.. autoexception:: lumache.InvalidKindError
-
-For example:
-
->>> import lumache
->>> lumache.get_random_ingredients()
-['shells', 'gorgonzola', 'parsley']
 
