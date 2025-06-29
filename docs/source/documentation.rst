@@ -1,7 +1,7 @@
 Documentation
 =====
 
-SMACC2
+SMACC2 Doxygen
 ----------------
 
 The Doxygen documentation for the `SMACC2 Humble branch <https://robosoft-ai.github.io/smacc2_doxygen/humble/html/namespaces.html>`_ can be found here:
@@ -23,7 +23,7 @@ The Doxygen documentation for the `SMACC2 Foxy branch <https://robosoft-ai.githu
    https://robosoft-ai.github.io/smacc2_doxygen/foxy/html/namespaces.html
 
 
-SMACC
+SMACC Doxygen
 ------------
 
 The Doxygen documentation for the `SMACC Noetic branch <https://robosoft-ai.github.io/smacc_doxygen/noetic/html/namespaces.html>`_ can be found here:
