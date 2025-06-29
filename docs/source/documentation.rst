@@ -4,7 +4,7 @@ Documentation
 SMACC2
 ----------------
 
-The Doxygen Documentation Site for the SMACC2 Humble branch can be found `here<https://robosoft-ai.github.io/smacc2_doxygen/humble/html/namespaces.html>`:
+The Doxygen Documentation Site for the SMACC2 Humble branch can be found `here<https://robosoft-ai.github.io/smacc2_doxygen/humble/html/namespaces.html>` :
 
 .. code-block:: console
 
