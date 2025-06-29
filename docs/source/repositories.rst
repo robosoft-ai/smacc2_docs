@@ -4,7 +4,7 @@ Repositiories
 SMACC2 Repo
 ----------------
 
-The SMACC2 Repository for ROS2 can be found here:
+The `SMACC2 <https://github.com/robosoft-ai/SMACC2>`_ Repository for ROS2 can be found here:
 
 .. code-block:: console
 
@@ -13,7 +13,7 @@ The SMACC2 Repository for ROS2 can be found here:
 SMACC Repo
 ------------
 
-The SMACC Repository for ROS1 can be found here:
+The `SMACC2 <https://github.com/robosoft-ai/SMACC>`_ Repository for ROS1 can be found here:
 
 .. code-block:: console
 
