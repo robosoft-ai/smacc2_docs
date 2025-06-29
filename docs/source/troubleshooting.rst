@@ -18,4 +18,7 @@ Runtime Errors
 
 `Transition back to previous state using history <https://github.com/robosoft-ai/SMACC/issues/52>`_
 
+`States, Topics & Data Structures <https://github.com/robosoft-ai/SMACC/issues/20>`_
+
+
 
