@@ -10,13 +10,13 @@ The Doxygen Documentation Site for the SMACC2 Humble branch can be found `here <
 
    https://robosoft-ai.github.io/smacc2_doxygen/humble/html/namespaces.html
 
-The Doxygen Documentation Site for the SMACC2 Jazzy branch can be found here:
+The Doxygen Documentation Site for the SMACC2 Jazzy branch can be found `here <https://robosoft-ai.github.io/smacc2_doxygen/jazzy/html/namespaces.html>`_:
 
 .. code-block:: console
 
    https://robosoft-ai.github.io/smacc2_doxygen/jazzy/html/namespaces.html
 
-The Doxygen Documentation Site for the SMACC2 Foxy branch can be found here:
+The Doxygen Documentation Site for the SMACC2 Foxy branch can be found `here <https://robosoft-ai.github.io/smacc2_doxygen/foxy/html/namespaces.html>`_:
 
 .. code-block:: console
 
