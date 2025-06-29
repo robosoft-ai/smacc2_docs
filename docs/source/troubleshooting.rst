@@ -1,6 +1,8 @@
 Troubleshooting
 =====
 
+Troubleshooting techniques for different problems that you might run into while building and running SMACC2.
+
 Build Errors
 ------------
 
