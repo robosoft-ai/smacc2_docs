@@ -1,34 +1,43 @@
 Documentation
 =====
 
-.. _installation:
+SMACC2
+----------------
 
-Installation
-------------
-
-To use Lumache, first install it using pip:
+The Doxygen Documentation Site for the SMACC2 Humble branch can be found here:
 
 .. code-block:: console
 
-   (.venv) $ pip install lumache
+   https://robosoft-ai.github.io/smacc2_doxygen/humble/html/namespaces.html
 
-Creating recipes
-----------------
+The Doxygen Documentation Site for the SMACC2 Jazzy branch can be found here:
 
-To retrieve a list of random ingredients,
-you can use the ``lumache.get_random_ingredients()`` function:
+.. code-block:: console
 
-.. autofunction:: lumache.get_random_ingredients
+   https://robosoft-ai.github.io/smacc2_doxygen/jazzy/html/namespaces.html
 
-The ``kind`` parameter should be either ``"meat"``, ``"fish"``,
-or ``"veggies"``. Otherwise, :py:func:`lumache.get_random_ingredients`
-will raise an exception.
+The Doxygen Documentation Site for the SMACC2 Foxy branch can be found here:
 
-.. autoexception:: lumache.InvalidKindError
+.. code-block:: console
 
-For example:
+   https://robosoft-ai.github.io/smacc2_doxygen/foxy/html/namespaces.html
 
->>> import lumache
->>> lumache.get_random_ingredients()
-['shells', 'gorgonzola', 'parsley']
+
+SMACC
+------------
+
+The Doxygen Documentation Site for the SMACC Melodic branch can be found here:
+
+.. code-block:: console
+
+   https://robosoft-ai.github.io/smacc_doxygen/melodic/html/namespaces.html
+
+The Doxygen Documentation Site for the SMACC Noetic branch can be found here:
+
+.. code-block:: console
+
+   https://robosoft-ai.github.io/smacc_doxygen/noetic/html/namespaces.html
+
+
+
 
