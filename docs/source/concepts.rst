@@ -95,3 +95,10 @@ Let’s look at the examples below, and remember from the naming convention page
     :width: 700px
     :align: center
 
+.. image:: images/State-Event-API-ClearpathRobotics-Ridgeback-UR5-Package-LO1-scaled.jpg
+    :width: 700px
+    :align: center
+
+To see Orthogonal code, here are some examples from the sm_reference_library..
+
+https://github.com/reelrbtx/SMACC/blob/master/smacc_sm_reference_library/sm_dance_bot/include/sm_dance_bot/orthogonals/or_navigation.h
