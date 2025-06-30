@@ -69,10 +69,11 @@ Here is the code for the example image above…
    };         
    } // namespace sm_dance_bot_strikes_back 
 
+
 Orthogonals
 ----------------
 
-“An obvious application of orthogonality is in splitting a state in accordance with its physical subsystems.” – Harel (1987) pg. 14
+*“An obvious application of orthogonality is in splitting a state in accordance with its physical subsystems.”* – Harel (1987) pg. 14
 
 Orthogonality, one of the three additions to state machine formalism originally contributed by Harel in his 1987 paper, is absolutely crucial for the construction of complex robotic state machines. This is because complex robots are, almost by definition, amalgamations of hardware components such as sensors, cameras, actuators, encoders, sub-assemblies, etc.
 
