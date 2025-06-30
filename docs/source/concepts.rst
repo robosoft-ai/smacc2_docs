@@ -69,23 +69,26 @@ Here is the code for the example image above…
    };         
    } // namespace sm_dance_bot_strikes_back 
 
-Creating recipes
+Orthogonals
 ----------------
 
-To retrieve a list of random ingredients,
-you can use the ``lumache.get_random_ingredients()`` function:
+“An obvious application of orthogonality is in splitting a state in accordance with its physical subsystems.” – Harel (1987) pg. 14
 
-.. autofunction:: lumache.get_random_ingredients
+Orthogonality, one of the three additions to state machine formalism originally contributed by Harel in his 1987 paper, is absolutely crucial for the construction of complex robotic state machines. This is because complex robots are, almost by definition, amalgamations of hardware components such as sensors, cameras, actuators, encoders, sub-assemblies, etc.
 
-The ``kind`` parameter should be either ``"meat"``, ``"fish"``,
-or ``"veggies"``. Otherwise, :py:func:`lumache.get_random_ingredients`
-will raise an exception.
+In SMACC, Orthogonals are classes, defined by header files in their respective state machine, created by the State Machine upon start-up, then inherited by every Leaf State in that state machine, that serve as a container for clients, client behaviors, othogonal components, maybe shared pointers. For the most common use cases, they contain one Client, and either zero, one or multiple client behaviors in any one state.
 
-.. autoexception:: lumache.InvalidKindError
+They also function as namespace (I like to think of them as a last name), that allows you to specify and diffentiate between multiple instances of the same client in one state machine. For example, imagine a robot that has two arms, that both use their own instance of the SMACC MoveIt Client found in the SMACC client library, each running in a unique orthogonal (like OrLeftArm, OrRightArm).
 
-For example:
+The typical case, is that each device, such as an imu, a lidar scanner, a robot arm or a robot base, will be managed in it’s own orthogonal.
 
->>> import lumache
->>> lumache.get_random_ingredients()
-['shells', 'gorgonzola', 'parsley']
+Let’s look at the examples below, and remember from the naming convention page, that…
+
+    OrCommLink = Communications Link Orthogonal
+    ClRadioDataLink = Radio Data Link Client
+    CbFrequencyHop = Frequency Hop Client Behavior
+
+.. image:: images/State-Event-API-Apache-L01-scaled.jpg
+    :width: 700px
+    :align: center
 
