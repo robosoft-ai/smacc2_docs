@@ -30,38 +30,38 @@ Here is the code for the example image above…
 
 .. code-block:: console
 
-    #include <smacc/smacc.h>       
-namespace sm_dance_bot_strikes_back                     
-{       
-// STATE DECLARATION               
-struct StAcquireSensors : smacc::SmaccState<StAcquireSensors, MsDanceBotRunMode>                       
-{       
-   using SmaccState::SmaccState;                                   
-// DECLARE CUSTOM OBJECT TAGS       
-   struct ON_SENSORS_AVAILABLE : SUCCESS{};       
-   struct SrAcquireSensors;       
-// TRANSITION TABLE       
-   typedef mpl::list<       
-   Transition<EvAllGo<SrAllEventsGo, SrAcquireSensors>, StEventCountDown, ON_SENSORS_AVAILABLE>, 
-   Transition<EvActionSucceeded<CbAbsoluteRotate, OrNavigation>, StEventCountDown, SUCCESS>,   
-   Transition<EvTimer<CbAbsoluteTimer, OrTimer>, StPreviousState, ABORT>               
-   >reactions;       
-// STATE FUNCTIONS     
-   static void staticConfigure()       
+   #include <smacc/smacc.h>       
+   namespace sm_dance_bot_strikes_back                     
    {       
-      configure_orthogonal<OrTemperatureSensor, CbConditionTemperatureSensor>();          
-      configure_orthogonal<OrObstaclePerception, CbLidarSensor>();            
-      configure_orthogonal<OrStringPublisher, CbStringPublisher>("Hello World!");          
-      configure_orthogonal<OrNavigation, CbAbsoluteRotate>(360);       
-      configure_orthogonal<OrTimer, CbAbsoluteTimer>(10);       
-      // Create State Reactor        
-      auto srAllSensorsReady = static_createStateReactor<SrAllEventsGo>();              
-      srAllSensorsReady->addInputEvent<EvTopicMessage<CbLidarSensor, OrObstaclePerception>>();
-      srAllSensorsReady->addInputEvent<EvTopicMessage<CbConditionTemperatureSensor, OrTemperatureSensor>>();                              
-      srAllSensorsReady->setOutputEvent<EvAllGo<SrAllEventsGo, SrAcquireSensors>>();      
-   }       
-};         
-} // namespace sm_dance_bot_strikes_back 
+   // STATE DECLARATION               
+   struct StAcquireSensors : smacc::SmaccState<StAcquireSensors, MsDanceBotRunMode>                       
+   {       
+      using SmaccState::SmaccState;                                   
+   // DECLARE CUSTOM OBJECT TAGS       
+      struct ON_SENSORS_AVAILABLE : SUCCESS{};       
+      struct SrAcquireSensors;       
+   // TRANSITION TABLE       
+      typedef mpl::list<       
+      Transition<EvAllGo<SrAllEventsGo, SrAcquireSensors>, StEventCountDown, ON_SENSORS_AVAILABLE>, 
+      Transition<EvActionSucceeded<CbAbsoluteRotate, OrNavigation>, StEventCountDown, SUCCESS>,   
+      Transition<EvTimer<CbAbsoluteTimer, OrTimer>, StPreviousState, ABORT>               
+      >reactions;       
+   // STATE FUNCTIONS     
+      static void staticConfigure()       
+      {       
+         configure_orthogonal<OrTemperatureSensor, CbConditionTemperatureSensor>();          
+         configure_orthogonal<OrObstaclePerception, CbLidarSensor>();            
+         configure_orthogonal<OrStringPublisher, CbStringPublisher>("Hello World!");          
+         configure_orthogonal<OrNavigation, CbAbsoluteRotate>(360);       
+         configure_orthogonal<OrTimer, CbAbsoluteTimer>(10);       
+         // Create State Reactor        
+         auto srAllSensorsReady = static_createStateReactor<SrAllEventsGo>();              
+         srAllSensorsReady->addInputEvent<EvTopicMessage<CbLidarSensor, OrObstaclePerception>>();
+         srAllSensorsReady->addInputEvent<EvTopicMessage<CbConditionTemperatureSensor, OrTemperatureSensor>>();                              
+         srAllSensorsReady->setOutputEvent<EvAllGo<SrAllEventsGo, SrAcquireSensors>>();      
+      }       
+   };         
+   } // namespace sm_dance_bot_strikes_back 
 
 Creating recipes
 ----------------
