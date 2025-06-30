@@ -28,15 +28,17 @@ Let’s go through the objects one by one…
 
 Here is the code for the example image above…
 
-.. code-block:: console
+.. code-block:: c++
 
    #include <smacc/smacc.h>       
    namespace sm_dance_bot_strikes_back                     
    {       
+
    // STATE DECLARATION               
    struct StAcquireSensors : smacc::SmaccState<StAcquireSensors, MsDanceBotRunMode>                       
    {       
-      using SmaccState::SmaccState;                                   
+      using SmaccState::SmaccState; 
+
    // DECLARE CUSTOM OBJECT TAGS       
       struct ON_SENSORS_AVAILABLE : SUCCESS{};       
       struct SrAcquireSensors;       
