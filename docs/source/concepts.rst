@@ -161,3 +161,17 @@ Client behaviors that inherit from smacc_asynchronous_client_behavior’s have t
 
 State Reactors
 ------------
+
+In an event-driven state machine…
+
+Events -> Reactions ->Other Events
+
+And as functors are to functions, Reactors are to reactions, namely, a class that behaves as a reaction.
+
+State Reactions accept events as an input, and output events. They are scoped to the lifetime of the state that declares them.
+
+.. image:: images/State-Legend-cropped.jpg
+    :width: 700px
+    :align: center
+
+This is in contrast to states, which also accept events as input, but then output transitions and parameter changes (important for State Machine determinism).
