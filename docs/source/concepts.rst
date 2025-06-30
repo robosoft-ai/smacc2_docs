@@ -9,10 +9,9 @@ State Machines, are ultimately about the organization of code.
 Let’s take a look at the taxonomy of SMACC objects inside of leaf state below, StAcquireSensors…
 
 
-.. code-block:: console
-
-   (.venv) $ pip install lumache
-
+.. image:: images/State-Legend-cropped.jpg
+    :width: 700px
+    :align: center
 
 Let’s go through the objects one by one…
 
