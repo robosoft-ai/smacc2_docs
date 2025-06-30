@@ -69,9 +69,8 @@ Here is the code for the example image above…
    };         
    } // namespace sm_dance_bot_strikes_back 
 
-.. role:: raw-html(raw)
-    :format: html
-    :raw-html:`<br />`
+|
+|
 
 Orthogonals
 ----------------
