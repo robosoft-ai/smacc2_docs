@@ -85,11 +85,9 @@ The typical case, is that each device, such as an imu, a lidar scanner, a robot 
 
 Let’s look at the examples below, and remember from the naming convention page, that…
 
-    OrCommLink = Communications Link Orthogonal
-
-    ClRadioDataLink = Radio Data Link Client
-
-    CbFrequencyHop = Frequency Hop Client Behavior
+- OrCommLink = Communications Link Orthogonal
+- ClRadioDataLink = Radio Data Link Client
+- CbFrequencyHop = Frequency Hop Client Behavior
 
 .. image:: images/State-Event-API-Apache-LO1-scaled.jpg
     :width: 700px
