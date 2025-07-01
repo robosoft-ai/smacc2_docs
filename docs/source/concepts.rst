@@ -188,3 +188,26 @@ State Reactions accept events as an input, and output events. They are scoped to
     :align: center
 
 This is in contrast to states, which also accept events as input, but then output transitions and parameter changes (important for State Machine determinism).
+
+Components 
+------------
+
+Each state in a state machine should ideally contain all the information needed 
+Each state in a state machine is ideally a separate unit that can carry out all its tasks without input from elsewhere. This is conceptually similar to the memorylessness property of Markov chains, where the current ‘link’ in the chain (i.e. state) does not know the state transition history and is only able to reason about its current state and the next possible transitions. In practical terms, this means that the states in a state machine should be designed such that every state can be computed and transitioned from regardless of the previous states and the computations that were carried out within them.
+
+In SMACC, states are short-lived objects that are created and initialised when they are transitioned into and destroyed when they are transitioned from. Thus, in keeping with what the states represent in a state machine as described previously, all data that are stored within the state object will be lost as soon as the state is exited. States are therefore a bad place to store information you’d like passed between states and avoid unneeded recomputation, for example server login information, robot localisation information, etc. You could instead store that information in the long-lived client, orthogonal or state machine objects, which could easily be made available to client behaviours and states in SMACC. However, this is not a good fit and semantically does not make much sense (why would a hardware client care about where the robot is?). Saving this information in the state machine class is also a bit clumsy and is similar to using global variables - a very easy way to footgun yourself.
+
+Enter SMACC components. A component is a long-lived object that is intended to be used as a data store that provides information and other data to any client behaviour that accesses them. They are attached to a client and can be accessed through it, providing a conceptual abstraction between the client that acts as a hardware gateway, and additional data you’d like to save related to that hardware (e.g. store the robot’s current location in a component attached to the localisation client).
+
+
+
+Threading Model
+------------
+
+**State Machine Event Processing**
+
+SMACC is built on the Boost StateChart library and consequently shares many similarities with that library.  The StateChart library provides synchronous and asynchronous threading models with which one can build a state machine. The synchronous model unsurprisingly creates synchronous state machines. Synchronous threads are simpler to understand and reason about, since they process input events as they come in. However, only one event can be processed at a time and if another event is triggered, the event currently being processed may be pre-empted and have its computation disrupted. This would lead to erratic behaviour. Robotics applications are typically very complex machines with many sensor inputs that need to be processed and control outputs that need to be generated. 
+
+Asynchronous threads are substantially more complex to reason about and manage, but offer greater flexibility. Primarily for this reason, asynchronous threading is used in SMACC. Asynchronous threads are implemented with two main components: a scheduler and the processor. The scheduler receives events from external clients and stores them in a queue to be processed by the processor. Schedulers may feed the processor events based on some selection scheme, e.g. priority or a deadline. SMACC uses a FIFO (first in, first out) scheduler to process its events. When the scheduler’s event queue is empty, the processor will idle until new events are fed. 
+
+
