@@ -1,6 +1,18 @@
 Concepts I - HSM Architecture
 =====
 
+Hierarchal States
+----------------
+Let’s talk about SMACC support for hierarchical states…
+
+.. image:: images/SMACC-State-Hierarchy.jpg
+    :width: 700px
+    :align: center
+
+We need to make a distinction between parent states & leaf states. Leaf states being defined as those states that do not have any child states. In the example above, StState1, StState2, StiState1, StiState2 and StiState3 are leaf states.
+
+As can be seen in the image above, only leaf states should have orthogonals. The reason for this being that only the leaf states interact with the hardware interface, where the higher level parent states such as superstates and modestates, define sequences of states, looping of states, parameter changes, etc.
+
 SMACC States
 ------------
 
@@ -11,7 +23,6 @@ SMACC States
 - onEntry() – For RT Steady State. Here it is assumed that everything has been configured, and you are ready to roll.
 - update()
 - onExit() – Self explanatory 
-
 
 |
 |
