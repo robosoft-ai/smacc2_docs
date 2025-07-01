@@ -169,25 +169,7 @@ Client behaviors that inherit from smacc_asynchronous_client_behavior’s have t
 - FINISH through EvCbFinished
 - FAILURE through EvCbFailure
 
-|
-|
 
-State Reactors
-------------
-
-In an event-driven state machine…
-
-Events -> Reactions ->Other Events
-
-And as functors are to functions, Reactors are to reactions, namely, a class that behaves as a reaction.
-
-State Reactions accept events as an input, and output events. They are scoped to the lifetime of the state that declares them.
-
-.. image:: images/State-Legend-cropped.jpg
-    :width: 700px
-    :align: center
-
-This is in contrast to states, which also accept events as input, but then output transitions and parameter changes (important for State Machine determinism).
 
 |
 |
@@ -225,3 +207,23 @@ Updateability
 
 Boost signals - what they are and how they are used...
 SMACC signals are an extension to the Boost.Signals2 object and is a thread-safe implementation of the signals and slots design construct. Signals and slots allow for the observer pattern to be easily implemented safely without excessive boilerplate code. In this case, the signal is the event emitter that can have multiple subscribers attached to it. When an event is emitted as a callback, the attached slots receive the event and execute their function. The signals and slots construct is a good fit for SMACC, which has to subscribe to a ROS topic (i.e. a signal) and execute some code when a new message is received (i.e. execute a slot).
+
+|
+|
+
+State Reactors
+------------
+
+In an event-driven state machine…
+
+Events -> Reactions ->Other Events
+
+And as functors are to functions, Reactors are to reactions, namely, a class that behaves as a reaction.
+
+State Reactions accept events as an input, and output events. They are scoped to the lifetime of the state that declares them.
+
+.. image:: images/State-Legend-cropped.jpg
+    :width: 700px
+    :align: center
+
+This is in contrast to states, which also accept events as input, but then output transitions and parameter changes (important for State Machine determinism).
