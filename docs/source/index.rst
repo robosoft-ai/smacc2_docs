@@ -17,10 +17,8 @@ Welcome to the documentation for SMACC2, a high performance, behavioral state ma
 
 * Check out the :doc:`getting started<getting started>` to start using SMACC2.
 * Visit the :doc:`repositories<repositories>` for links to learn about specific packages.
-* Familiarize yourself with :doc:`concepts<concepts>` essential to understanding SMACC2.
-* Compare the :doc:`performance <performance>` of SMACC2 on various platforms.
-* Scan through the :doc:`FAQs <faq>` for answers to common questions.
-* Reference the :doc:`release notes <releases notes>` for details on all updates made to SMACC2.
+* Familiarize yourself with :doc:`concepts<concepts1>` essential to understanding SMACC2.
+* Scan through the :doc:`Troubleshooting <troubleshooting>` for answers to common questions.
 
 .. note::
 
