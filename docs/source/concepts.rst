@@ -189,6 +189,9 @@ State Reactions accept events as an input, and output events. They are scoped to
 
 This is in contrast to states, which also accept events as input, but then output transitions and parameter changes (important for State Machine determinism).
 
+|
+|
+
 Components 
 ------------
 
@@ -200,6 +203,8 @@ In SMACC, states are short-lived objects that are created and initialised when t
 Enter SMACC components. A component is a long-lived object that is intended to be used as a data store that provides information and other data to any client behaviour that accesses them. They are attached to a client and can be accessed through it, providing a conceptual abstraction between the client that acts as a hardware gateway, and additional data you’d like to save related to that hardware (e.g. store the robot’s current location in a component attached to the localisation client).
 
 
+|
+|
 
 Threading Model
 ------------
@@ -210,4 +215,13 @@ SMACC is built on the Boost StateChart library and consequently shares many simi
 
 Asynchronous threads are substantially more complex to reason about and manage, but offer greater flexibility. Primarily for this reason, asynchronous threading is used in SMACC. Asynchronous threads are implemented with two main components: a scheduler and the processor. The scheduler receives events from external clients and stores them in a queue to be processed by the processor. Schedulers may feed the processor events based on some selection scheme, e.g. priority or a deadline. SMACC uses a FIFO (first in, first out) scheduler to process its events. When the scheduler’s event queue is empty, the processor will idle until new events are fed. 
 
+|
+|
 
+Updateability
+------------
+
+**Updateable Class**
+
+Boost signals - what they are and how they are used...
+SMACC signals are an extension to the Boost.Signals2 object and is a thread-safe implementation of the signals and slots design construct. Signals and slots allow for the observer pattern to be easily implemented safely without excessive boilerplate code. In this case, the signal is the event emitter that can have multiple subscribers attached to it. When an event is emitted as a callback, the attached slots receive the event and execute their function. The signals and slots construct is a good fit for SMACC, which has to subscribe to a ROS topic (i.e. a signal) and execute some code when a new message is received (i.e. execute a slot).
