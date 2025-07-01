@@ -42,4 +42,5 @@ Welcome to the documentation for SMACC2, a high performance, behavioral state ma
    troubleshooting
    about
    research group
+   other resources
    citations
