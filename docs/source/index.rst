@@ -40,5 +40,6 @@ Welcome to the documentation for SMACC2, a high performance, behavioral state ma
    forums
    troubleshooting
    release notes
+   research group
    about
    citations
