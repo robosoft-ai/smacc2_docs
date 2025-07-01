@@ -1,4 +1,4 @@
-Concepts
+Concepts II - Substate Architecture
 =====
 
 Intro to Substate Objects
