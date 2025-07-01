@@ -6,11 +6,11 @@ SMACC States
 
 **State Functions**
 
-    staticConfigure() – For static configuration of orthogonals.
-    runtimeConfigure() – For runtime configuration of orthogonals.
-    onEntry() – For RT Steady State. Here it is assumed that everything has been configured, and you are ready to roll.
-    update()
-    onExit() – Self explanatory 
+- staticConfigure() – For static configuration of orthogonals.
+- runtimeConfigure() – For runtime configuration of orthogonals.
+- onEntry() – For RT Steady State. Here it is assumed that everything has been configured, and you are ready to roll.
+- update()
+- onExit() – Self explanatory 
 
 
 |
@@ -20,6 +20,12 @@ Transitions
 ----------------
 
 In 2003, David Abrams, founder of the Boost Libraries, Author of boost.mpl and Aleksey Gurtovoy, wrote an example for their MPL library that encompassed a state machine (procedural) and the first Transition Table. Seen below…
+
+
+.. image:: images/boost-mpl-transition-table-3-Cropped.jpg
+    :width: 700px
+    :align: center
+
 
 https://www.boost.org/doc/libs/1_72_0/libs/mpl/example/fsm/player1.cpp
 
