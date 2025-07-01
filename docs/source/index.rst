@@ -33,7 +33,8 @@ Welcome to the documentation for SMACC2, a high performance, behavioral state ma
    :maxdepth: 2
 
    getting started
-   concepts
+   concepts1
+   concepts2
    repositories
    demos
    documentation
