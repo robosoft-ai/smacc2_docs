@@ -13,6 +13,9 @@ We need to make a distinction between parent states & leaf states. Leaf states b
 
 As can be seen in the image above, only leaf states should have orthogonals. The reason for this being that only the leaf states interact with the hardware interface, where the higher level parent states such as superstates and modestates, define sequences of states, looping of states, parameter changes, etc.
 
+|
+|
+
 SMACC States
 ------------
 
@@ -45,3 +48,45 @@ This table, was extremely popular and was adopted almost unchanged into other st
 In the boost.MPL library, only procedural state machines could be written, and the transition table was for the entire state machine.
 
 In SMACC we’ve adapted the Transition Table to the behavioral state machine (along with Boost Statechart) by including a transition table inside of every state.
+
+
+|
+|
+
+Order of Function Calls
+----------------
+
+In SMACC States, the four standard function calls are…
+
+- staticConfigure()
+- runtimeConfigure()
+- onEntry()
+- update()* – Must be added explicitly
+- onExit()
+
+In the client behaviors, the four standard function calls are..
+
+- runtimeConfigure()
+- onEntry()
+- update()* – Must be added explicitly
+- onExit()
+
+So, lets assume that we have a state machine (SmExample) with two orthogonals (OrOne & OrTwo), in state StOne, with one client, and one client behavior in each orthogonal (ClOne, ClTwo, CbOne, CbTwo).
+
+From the state StOne, the order of the function calls would be…
+
+- StOne – staticConfigure()
+- StOne – runtimeConfigure()
+- CbOne – runtimeConfigure()
+- CbTwo – runtimeConfigure()
+- StOne – onEntry()
+- CbOne – onEntry()
+- CbTwo – onEntry()
+- CbOne – update()*
+- CbTwo – update()*
+- StOne – update()*
+- CbOne – onExit()
+- CbTwo – onExit()
+- StOne – onExit()
+
+
