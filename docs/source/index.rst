@@ -34,6 +34,7 @@ Welcome to the documentation for SMACC2, a high performance, behavioral state ma
    concepts1
    concepts2
    repositories
+   debians
    demos
    documentation
    forums
