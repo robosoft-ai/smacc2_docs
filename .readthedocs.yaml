@@ -10,5 +10,6 @@ python:
     - requirements: docs/requirements.txt
 
 sphinx:
+  builder: dirhtml
   configuration: docs/source/conf.py
 
