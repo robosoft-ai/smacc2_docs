@@ -36,11 +36,6 @@
     color: #fcfcfc;
 }
 
-div.floating.container.bottom-right {
-    right: auto !important;
-    left: 20px !important;
-}
-
 .floating.container.bottom-right {
     right: auto;
     left: 0;
