@@ -31,7 +31,17 @@
     padding: .809em;
     margin-bottom: .809em;
     z-index: 200;
-    background-color: #343131;
+    background-color: #404040;
     text-align: center;
     color: #fcfcfc;
+}
+
+.floating.container.bottom-right {
+    right: auto;
+    left: 0;
+    color: #404040;
+}
+
+.floating.container.bottom-right a {
+    color: #2980b9;
 }
