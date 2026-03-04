@@ -33,6 +33,15 @@ html_theme = 'sphinx_rtd_theme'
 html_static_path = ['_static']
 html_css_files = ['custom.css']
 
+html_show_sourcelink = False
+
+html_context = {
+    "display_github": True,
+    "github_user": "robosoft-ai",
+    "github_repo": "smacc2_docs",
+    "github_version": "main",
+    "conf_py_path": "/docs/source/",
+}
 
 # -- Options for EPUB output
 epub_show_urls = 'footnote'
