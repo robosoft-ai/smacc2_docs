@@ -34,6 +34,7 @@ html_theme = 'sphinx_rtd_theme'
 html_static_path = ['_static']
 html_css_files = ['custom.css']
 
+html_favicon = '_static/SiteIcon-White.png'
 html_show_sourcelink = False
 
 # -- Options for EPUB output
