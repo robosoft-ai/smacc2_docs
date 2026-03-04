@@ -3,7 +3,7 @@
 # -- Project information
 
 project = 'SMACC2'
-copyright = '2025, Robosoft Inc.'
+copyright = '2026, Robosoft Inc.'
 author = 'Brett Aldrich'
 
 release = '0.1'
