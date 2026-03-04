@@ -4,7 +4,6 @@
 }
 
 .wy-side-nav-search>a
-Specificity: (0,1,1)
  {
     color: #fcfcfc;
     font-size: 300%;
@@ -19,7 +18,6 @@ Specificity: (0,1,1)
 }
 
 .wy-side-nav-search input[type=text]
-Specificity: (0,2,1)
  {
     width: 80%;
     border-radius: 50px;
