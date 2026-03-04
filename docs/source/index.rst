@@ -33,9 +33,9 @@ Welcome to the documentation for SMACC2, a high performance, behavioral state ma
    :hidden:
    :maxdepth: 2
 
-   getting_started
-   concepts1
-   concepts2
+   getting-started
+   concepts-1
+   concepts-2
    repositories
    debians
    demos
@@ -43,6 +43,6 @@ Welcome to the documentation for SMACC2, a high performance, behavioral state ma
    forums
    troubleshooting
    about
-   research_group
-   other_resources
+   research-group
+   other-resources
    citations
