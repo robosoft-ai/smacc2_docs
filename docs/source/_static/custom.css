@@ -3,6 +3,17 @@
     display: none;
 }
 
+.wy-side-nav-search>a
+Specificity: (0,1,1)
+ {
+    color: #fcfcfc;
+    font-size: 300%;
+    font-weight: 700;
+    display: inline-block;
+    padding: 4px 6px;
+    margin-bottom: .009em;
+    max-width: 100%;
+}
 .wy-side-nav-search .version {
     font-size: 80%;
 }
