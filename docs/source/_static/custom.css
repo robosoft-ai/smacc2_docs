@@ -19,8 +19,19 @@
 
 .wy-side-nav-search input[type=text]
  {
-    width: 80%;
+    width: 75%;
     border-radius: 50px;
     padding: 6px 12px;
     border-color: #2472a4;
+}
+
+.wy-side-nav-search {
+    display: block;
+    width: 300px;
+    padding: .809em;
+    margin-bottom: .809em;
+    z-index: 200;
+    background-color: #222222;
+    text-align: center;
+    color: #fcfcfc;
 }
