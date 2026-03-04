@@ -7,7 +7,7 @@
  {
     color: #fcfcfc;
     font-size: 300%;
-    font-weight: 700;
+    font-weight: 600;
     display: inline-block;
     padding: 4px 6px;
     margin-bottom: .009em;
@@ -31,7 +31,7 @@
     padding: .809em;
     margin-bottom: .809em;
     z-index: 200;
-    background-color: #222222;
+    background-color: #343131;
     text-align: center;
     color: #fcfcfc;
 }
