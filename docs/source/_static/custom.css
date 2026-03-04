@@ -1,4 +1,7 @@
 
+.wy-nav-side {
+    background: #343131 !important;
+}
 .wy-side-nav-search a.icon-home::before {
     display: none;
 }
