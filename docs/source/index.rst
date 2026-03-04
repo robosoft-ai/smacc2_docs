@@ -33,7 +33,7 @@ Welcome to the documentation for SMACC2, a high performance, behavioral state ma
    :hidden:
    :maxdepth: 2
 
-   getting started
+   getting_started
    concepts1
    concepts2
    repositories
@@ -43,6 +43,6 @@ Welcome to the documentation for SMACC2, a high performance, behavioral state ma
    forums
    troubleshooting
    about
-   research group
-   other resources
+   research_group
+   other_resources
    citations
