@@ -17,3 +17,12 @@ Specificity: (0,1,1)
 .wy-side-nav-search .version {
     font-size: 80%;
 }
+
+.wy-side-nav-search input[type=text]
+Specificity: (0,2,1)
+ {
+    width: 80%;
+    border-radius: 50px;
+    padding: 6px 12px;
+    border-color: #2472a4;
+}
