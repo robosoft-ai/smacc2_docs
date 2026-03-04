@@ -7,7 +7,7 @@ copyright = '2025, Robosoft Inc.'
 author = 'Brett Aldrich'
 
 release = '0.1'
-version = '0.1.0'
+version = 'State Machine Asynchronous C++'
 
 # -- General configuration
 
@@ -30,6 +30,8 @@ templates_path = ['_templates']
 # -- Options for HTML output
 
 html_theme = 'sphinx_rtd_theme'
+html_static_path = ['_static']
+html_css_files = ['custom.css']
 
 # -- Options for EPUB output
 epub_show_urls = 'footnote'
