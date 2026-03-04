@@ -1,4 +1,8 @@
 
+.wy-side-nav-search a.icon-home::before {
+    display: none;
+}
+
 .wy-side-nav-search .version {
     font-size: 80%;
 }
