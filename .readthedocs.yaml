@@ -12,6 +12,3 @@ python:
 sphinx:
   configuration: docs/source/conf.py
 
-addons:
-  flyout:
-    position: "bottom-left"
