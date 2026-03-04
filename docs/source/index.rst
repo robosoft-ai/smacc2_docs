@@ -1,10 +1,6 @@
-:orphan:
-
-.. meta::
-   :title: My Custom Browser Tab Title
-   :description: 
-
-
+.. title:: My Custom Browser Tab Title
+.. meta:: Custom Meta Description
+  
 SMACC2
 ===================================
 
