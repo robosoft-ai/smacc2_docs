@@ -24,7 +24,9 @@ Header files have the following format…
 - sr_ = state reactor (ex: sr_all_events_go.h)
 - or_ = orthogonal (ex: or_navigation.h)
 - cl_ = client (ex: cl_move_base_z.h)
-- cb_ = client behavior (ex: cb_timeout_watchdog.h) 
+- cb_ = client behavior (ex: cb_timeout_watchdog.h)
+- cp_ = component (ex: cp_odom_tracker.h)
+- ev_ = event (ex: ev_navigation_success.h)
 
 And then classes have the following format…
 
@@ -36,7 +38,9 @@ And then classes have the following format…
 - Sr = state reactor (ex: SrAllEventsGo)
 - Or = orthogonal (ex: OrNavigation)
 - Cl = client (ex: ClMoveBaseZ)
-- Cb = client behavior (ex: CbTimeoutWatchdog) 
+- Cb = client behavior (ex: CbTimeoutWatchdog)
+- Cp = component (ex: CpOdomTracker)
+- Ev = event (ex: EvNavigationSuccess)
 
 |
 |

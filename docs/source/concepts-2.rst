@@ -1,6 +1,30 @@
 Concepts II - Substate Architecture
 =====
 
+Object Lifetimes
+------------
+
+SMACC2 runtime objects fall into two categories based on their lifetime:
+
+**State Machine-Scoped Objects** persist for the entire lifetime of the state machine. These are created once at startup and exist until the state machine shuts down:
+
+- State Machines (Sm)
+- Orthogonals (Or)
+- Clients (Cl)
+- Components (Cp)
+
+**State-Scoped Objects** are created when a state is entered and destroyed when that state is exited. Their lifetime is tied to the individual state transition:
+
+- States (St)
+- Client Behaviors (Cb)
+- State Reactors (Sr)
+- Event Generators (Eg)
+
+Understanding this distinction is essential. Because client behaviors are state-scoped, they are the right place for state-specific logic. Because clients and components are state machine-scoped, they are the right place for persistent connections, shared data, and hardware interfaces that must survive state transitions.
+
+|
+|
+
 Intro to Substate Objects
 ------------
 
@@ -205,8 +229,19 @@ Updateability
 
 **Updateable Class**
 
-Boost signals - what they are and how they are used...
 SMACC signals are an extension to the Boost.Signals2 object and is a thread-safe implementation of the signals and slots design construct. Signals and slots allow for the observer pattern to be easily implemented safely without excessive boilerplate code. In this case, the signal is the event emitter that can have multiple subscribers attached to it. When an event is emitted as a callback, the attached slots receive the event and execute their function. The signals and slots construct is a good fit for SMACC, which has to subscribe to a ROS topic (i.e. a signal) and execute some code when a new message is received (i.e. execute a slot).
+
+**Why SmaccSignal instead of raw Boost.Signals2?**
+
+SMACC wraps Boost.Signals2 in its own SmaccSignal type for a critical reason: automatic lifecycle management. The state machine tracks all signal connections by object pointer through its ``createSignalConnection()`` mechanism. When a state-scoped object (such as a client behavior) is destroyed on state exit, the framework automatically calls ``disconnectSmaccSignalObject()`` to sever all of that object's signal connections.
+
+Without this, using raw Boost.Signals2 would lead to serious problems:
+
+- **Dangling callbacks:** A client behavior subscribes to a client's signal in ``onEntry()``. The state exits and the behavior is destroyed, but the raw signal connection persists. When the client fires the signal, it invokes a callback on a destroyed object -- a segmentation fault.
+- **Orphaned connections:** Each state transition would accumulate dead connections that are never cleaned up, leaking memory over the lifetime of the state machine.
+- **Stale events:** Without the framework's ``EventLifeTime::CURRENT_STATE`` enforcement, an asynchronous client behavior could post events into the wrong state after a transition has already occurred, corrupting the state machine's execution flow.
+
+The SmaccSignal approach is not just convenience -- it is essential for correctness in a system where objects are continuously created and destroyed across state transitions.
 
 |
 |
