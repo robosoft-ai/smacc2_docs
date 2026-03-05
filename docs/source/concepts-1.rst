@@ -1,7 +1,7 @@
 Concepts I - HSM Architecture
 =====
 
-Hierarchal States
+Hierarchical States
 ----------------
 Let’s talk about SMACC support for hierarchical states…
 
