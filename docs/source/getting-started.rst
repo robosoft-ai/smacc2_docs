@@ -5,14 +5,14 @@ Naming Convention
 ------------
 
 Because of the complexities of c++ template code and state machines in general, the Authors of the SMACC library developed a naming convention that users are strongly encouraged to follow.
-Benefits of Adopting the Convention
+**Benefits of Adopting the Convention**
 
 The first benefit, is that the convention greatly improves code readability, especially from inside an IDE or the SMACC doxygen pages.
 
 The second benefit, is that if you run into issues, the SMACC support team can quickly and easily get a handle on the broader picture of your problem.
 
-And the third benefit, is that the SMACC development tools, such as the SMACC Viewer and the yet-to-be-built code-generator twill utilize this same naming convention and by adopting it, you ensure compatibility.
-Prefixes
+And the third benefit, is that the SMACC development tools, such as the SMACC Viewer and the yet-to-be-built code-generator will utilize this same naming convention and by adopting it, you ensure compatibility.
+**Prefixes**
 
 Header files have the following format…
 
@@ -32,7 +32,7 @@ And then classes have the following format…
 
 - Sm = state machine (ex: SmDanceBot)
 - Ms = mode state (ex: MsRecover)
-- Ss = super state (ex: SsSequence1.h)
+- Ss = super state (ex: SsSequence1)
 - St = state (ex: StNavigateToWaypointsX)
 - Sti = inner state (ex: StiRadialRotate)
 - Sr = state reactor (ex: SrAllEventsGo)
@@ -50,55 +50,32 @@ State Machine Folder Structure
 
 **Example State Machine Folder Structure**
 
-sm_move_it…
+.. code-block:: text
 
-    config
-    docs
-    include
-        /sm_move_it
-        /clients
-    launch
-    msg
-    servers
-        /fake_cube_perception_node
-    simulation
-        /models
-        /robots
-        /worlds
-    src
-        /clients
-    test
+   sm_example/
+   ├── CMakeLists.txt
+   ├── package.xml
+   ├── config/
+   ├── docs/
+   ├── include/
+   │   └── sm_example/
+   │       ├── orthogonals/
+   │       │   └── or_navigation.hpp
+   │       ├── states/
+   │       │   ├── st_state_1.hpp
+   │       │   └── st_state_2.hpp
+   │       ├── superstates/
+   │       │   └── ss_superstate_1.hpp
+   │       ├── modestates/
+   │       │   └── ms_run_mode.hpp
+   │       └── sm_example.hpp
+   ├── launch/
+   │   └── sm_example.launch.py
+   └── src/
+       └── sm_example/
+           └── sm_example_node.cpp
 
-sm_dance_bot…
-
-    config
-    docs
-    include
-    launch
-    msg
-        /action
-    servers
-        /action_server_node_3
-            /include
-            /src
-        /led_action_server
-        /lidar_node
-        /service_node_3
-        /temperature_sensor_node
-    simulation
-        /urdf
-    src
-    test
-
-sm_atomic…
-
-    config
-    docs
-    include
-    launch
-    msg
-    src
-    test
+The ``include/sm_example/sm_example.hpp`` header is the main state machine definition, and ``src/sm_example/sm_example_node.cpp`` contains the ``main()`` entry point.
 
 |
 |
@@ -106,15 +83,32 @@ sm_atomic…
 Client Library Folder Structure
 ------------
 
-battery_monitor_client…
+**Example Client Library Folder Structure**
 
-    include
-    server
-        /battery_monitor_node
-            battery_monitor_nody.py
-    src
-    test
-        /sm_clienttest_1
-        /sm_clienttest_2
+.. code-block:: text
+
+   cl_example/
+   ├── CMakeLists.txt
+   ├── package.xml
+   ├── include/
+   │   └── cl_example/
+   │       ├── cl_example.hpp
+   │       ├── client_behaviors/
+   │       │   ├── cb_behavior_1.hpp
+   │       │   └── cb_behavior_2.hpp
+   │       └── components/
+   │           ├── cp_component_1.hpp
+   │           └── cp_component_2.hpp
+   └── src/
+       └── cl_example/
+           ├── cl_example.cpp
+           ├── client_behaviors/
+           │   ├── cb_behavior_1.cpp
+           │   └── cb_behavior_2.cpp
+           └── components/
+               ├── cp_component_1.cpp
+               └── cp_component_2.cpp
+
+The client library compiles into a shared library (``.so``) that state machines link against at build time.
 
 

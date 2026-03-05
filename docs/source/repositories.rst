@@ -1,4 +1,4 @@
-Repositiories
+Repositories
 =====
 
 SMACC2 Repo

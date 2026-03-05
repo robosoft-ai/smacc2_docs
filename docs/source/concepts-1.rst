@@ -56,7 +56,7 @@ In SMACC we’ve adapted the Transition Table to the behavioral state machine (a
 Order of Function Calls
 ----------------
 
-In SMACC States, the four standard function calls are…
+In SMACC States, the standard function calls are…
 
 - staticConfigure()
 - runtimeConfigure()
@@ -64,7 +64,7 @@ In SMACC States, the four standard function calls are…
 - update()* – Must be added explicitly
 - onExit()
 
-In the client behaviors, the four standard function calls are..
+In the client behaviors, the standard function calls are..
 
 - runtimeConfigure()
 - onEntry()

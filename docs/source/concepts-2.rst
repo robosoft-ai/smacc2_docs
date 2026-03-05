@@ -39,7 +39,7 @@ Let’s take a look at the taxonomy of SMACC objects inside of leaf state below,
 
 Let’s go through the objects one by one…
 
-**Orthogonals:** Orthogonals are persistent for the life of the state machine. They can conceptually can be thought of as modular slots for the hardware devices that comprise a robot. Every Orthogonal should contain at least one client, and may contain multiple client behaviors. For more on orthogonals, click here.
+**Orthogonals:** Orthogonals are persistent for the life of the state machine. They can conceptually be thought of as modular slots for the hardware devices that comprise a robot. Every Orthogonal should contain at least one client, and may contain multiple client behaviors. For more on orthogonals, click here.
 
 **Clients:** Client objects are persistent for the life of the state machine. They are typically used to do things like, manage connections to outside nodes and devices, and contain code that we would want executed regardless of the current state. Clients are an important source of events.
 
@@ -53,12 +53,12 @@ Here is the code for the example image above…
 
 .. code-block:: c++
 
-   #include <smacc/smacc.h>       
+   #include <smacc2/smacc2.h>       
    namespace sm_dance_bot_strikes_back                     
    {       
 
    // STATE DECLARATION               
-   struct StAcquireSensors : smacc::SmaccState<StAcquireSensors, MsDanceBotRunMode>                       
+   struct StAcquireSensors : smacc2::SmaccState<StAcquireSensors, MsDanceBotRunMode>                       
    {       
       using SmaccState::SmaccState; 
 
@@ -103,11 +103,11 @@ Orthogonals
 
 Orthogonality, one of the three additions to state machine formalism originally contributed by Harel in his 1987 paper, is absolutely crucial for the construction of complex robotic state machines. This is because complex robots are, almost by definition, amalgamations of hardware components such as sensors, cameras, actuators, encoders, sub-assemblies, etc.
 
-In SMACC, Orthogonals are classes, defined by header files in their respective state machine, created by the State Machine upon start-up, then inherited by every Leaf State in that state machine, that serve as a container for clients, client behaviors, othogonal components, maybe shared pointers. For the most common use cases, they contain one Client, and either zero, one or multiple client behaviors in any one state.
+In SMACC, Orthogonals are classes, defined by header files in their respective state machine, created by the State Machine upon start-up, then inherited by every Leaf State in that state machine, that serve as a container for clients, client behaviors, orthogonal components, maybe shared pointers. For the most common use cases, they contain one Client, and either zero, one or multiple client behaviors in any one state.
 
-They also function as namespace (I like to think of them as a last name), that allows you to specify and diffentiate between multiple instances of the same client in one state machine. For example, imagine a robot that has two arms, that both use their own instance of the SMACC MoveIt Client found in the SMACC client library, each running in a unique orthogonal (like OrLeftArm, OrRightArm).
+They also function as namespace (I like to think of them as a last name), that allows you to specify and differentiate between multiple instances of the same client in one state machine. For example, imagine a robot that has two arms, that both use their own instance of the SMACC MoveIt Client found in the SMACC client library, each running in a unique orthogonal (like OrLeftArm, OrRightArm).
 
-The typical case, is that each device, such as an imu, a lidar scanner, a robot arm or a robot base, will be managed in it’s own orthogonal.
+The typical case, is that each device, such as an imu, a lidar scanner, a robot arm or a robot base, will be managed in its own orthogonal.
 
 Let’s look at the examples below, and remember from the naming convention page, that…
 
@@ -125,7 +125,7 @@ Let’s look at the examples below, and remember from the naming convention page
 
 To see Orthogonal code, here are some examples from the sm_reference_library..
 
-https://github.com/reelrbtx/SMACC/blob/master/smacc_sm_reference_library/sm_dance_bot/include/sm_dance_bot/orthogonals/or_navigation.h
+https://github.com/robosoft-ai/SMACC2/tree/master/smacc2_sm_reference_library/sm_dance_bot/include/sm_dance_bot/orthogonals
 
 |
 |
@@ -201,7 +201,6 @@ Client behaviors that inherit from smacc_asynchronous_client_behavior’s have t
 Components 
 ------------
 
-Each state in a state machine should ideally contain all the information needed 
 Each state in a state machine is ideally a separate unit that can carry out all its tasks without input from elsewhere. This is conceptually similar to the memorylessness property of Markov chains, where the current ‘link’ in the chain (i.e. state) does not know the state transition history and is only able to reason about its current state and the next possible transitions. In practical terms, this means that the states in a state machine should be designed such that every state can be computed and transitioned from regardless of the previous states and the computations that were carried out within them.
 
 In SMACC, states are short-lived objects that are created and initialised when they are transitioned into and destroyed when they are transitioned from. Thus, in keeping with what the states represent in a state machine as described previously, all data that are stored within the state object will be lost as soon as the state is exited. States are therefore a bad place to store information you’d like passed between states and avoid unneeded recomputation, for example server login information, robot localisation information, etc. You could instead store that information in the long-lived client, orthogonal or state machine objects, which could easily be made available to client behaviours and states in SMACC. However, this is not a good fit and semantically does not make much sense (why would a hardware client care about where the robot is?). Saving this information in the state machine class is also a bit clumsy and is similar to using global variables - a very easy way to footgun yourself.
