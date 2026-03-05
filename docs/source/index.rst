@@ -40,7 +40,6 @@ Welcome to the documentation for SMACC2, a high performance, behavioral state ma
    debians
    demos
    documentation
-   forums
    troubleshooting
    about
    research-group

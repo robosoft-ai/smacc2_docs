@@ -53,45 +53,48 @@ Here is the code for the example image above…
 
 .. code-block:: c++
 
-   #include <smacc2/smacc2.h>       
-   namespace sm_dance_bot_strikes_back                     
-   {       
+   #include <smacc2/smacc.hpp>
+   namespace sm_example
+   {
+   using namespace smacc2::default_transition_tags;
+   using namespace smacc2::state_reactors;
 
-   // STATE DECLARATION               
-   struct StAcquireSensors : smacc2::SmaccState<StAcquireSensors, MsDanceBotRunMode>                       
-   {       
-      using SmaccState::SmaccState; 
+   // STATE DECLARATION
+   struct StAcquireSensors : smacc2::SmaccState<StAcquireSensors, MsRunMode>
+   {
+     using SmaccState::SmaccState;
 
-   // DECLARE CUSTOM OBJECT TAGS       
-      struct ON_SENSORS_AVAILABLE : SUCCESS{};       
-      struct SrAcquireSensors;    
+     // DECLARE CUSTOM OBJECT TAGS
+     struct ON_SENSORS_AVAILABLE : SUCCESS{};
 
-   // TRANSITION TABLE       
-      typedef mpl::list<       
-   
-      Transition<EvAllGo<SrAllEventsGo, SrAcquireSensors>, StEventCountDown, ON_SENSORS_AVAILABLE>, 
-      Transition<EvActionSucceeded<CbAbsoluteRotate, OrNavigation>, StEventCountDown, SUCCESS>,   
-      Transition<EvTimer<CbAbsoluteTimer, OrTimer>, StPreviousState, ABORT>               
-      
-      >reactions;       
+     // TRANSITION TABLE
+     typedef mpl::list<
 
-   // STATE FUNCTIONS     
-      static void staticConfigure()       
-      {       
-         configure_orthogonal<OrTemperatureSensor, CbConditionTemperatureSensor>();          
-         configure_orthogonal<OrObstaclePerception, CbLidarSensor>();            
-         configure_orthogonal<OrStringPublisher, CbStringPublisher>("Hello World!");          
-         configure_orthogonal<OrNavigation, CbAbsoluteRotate>(360);       
-         configure_orthogonal<OrTimer, CbAbsoluteTimer>(10);       
-   
-   // Create State Reactor        
-         auto srAllSensorsReady = static_createStateReactor<SrAllEventsGo>();              
-         srAllSensorsReady->addInputEvent<EvTopicMessage<CbLidarSensor, OrObstaclePerception>>();
-         srAllSensorsReady->addInputEvent<EvTopicMessage<CbConditionTemperatureSensor, OrTemperatureSensor>>();                              
-         srAllSensorsReady->setOutputEvent<EvAllGo<SrAllEventsGo, SrAcquireSensors>>();      
-      }       
-   };         
-   } // namespace sm_dance_bot_strikes_back 
+       Transition<EvAllGo<SrAllEventsGo>, StEventCountDown, ON_SENSORS_AVAILABLE>,
+       Transition<EvActionSucceeded<CbAbsoluteRotate, OrNavigation>, StEventCountDown, SUCCESS>,
+       Transition<EvTimer<CbTimerCountdownOnce, OrTimer>, StPreviousState, ABORT>
+
+       >reactions;
+
+     // STATE FUNCTIONS
+     static void staticConfigure()
+     {
+       configure_orthogonal<OrTemperatureSensor, CbConditionTemperatureSensor>();
+       configure_orthogonal<OrObstaclePerception, CbLidarSensor>();
+       configure_orthogonal<OrStringPublisher, CbStringPublisher>("Hello World!");
+       configure_orthogonal<OrNavigation, CbAbsoluteRotate>(360);
+       configure_orthogonal<OrTimer, CbTimerCountdownOnce>(10);
+
+       // Create State Reactor
+       static_createStateReactor<
+         SrAllEventsGo,
+         EvAllGo<SrAllEventsGo>,
+         mpl::list<
+           EvTopicMessage<CbLidarSensor, OrObstaclePerception>,
+           EvTopicMessage<CbConditionTemperatureSensor, OrTemperatureSensor>>>();
+     }
+   };
+   }  // namespace sm_example
 
 |
 |
