@@ -1,4 +1,4 @@
-.. title:: Debians | SMACC2
+.. title:: Debians
 .. meta::
    :description: Pre-built Debian packages for SMACC2 on ROS2 Jazzy and Humble, AMD64 and ARM64 architectures.
 

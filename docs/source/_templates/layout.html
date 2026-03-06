@@ -1,5 +1,9 @@
 {% extends "!layout.html" %}
 
+{% block htmltitle %}
+<title>{{ title|striptags|e }} | {{ docstitle|striptags|e }}</title>
+{% endblock %}
+
 {% block footer %}
 {{ super() }}
 

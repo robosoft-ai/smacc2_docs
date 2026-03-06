@@ -1,4 +1,4 @@
-.. title:: Hierarchical State Machine Architecture | SMACC2
+.. title:: Hierarchical State Machine Architecture
 .. meta::
    :description: Hierarchical state machine architecture in SMACC2, covering states, transitions, superstates, mode states, and state functions for ROS2 robotics.
 

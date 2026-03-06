@@ -1,4 +1,4 @@
-.. title:: Documentation | SMACC2
+.. title:: Documentation
 .. meta::
    :description: Doxygen API documentation for SMACC2 (Jazzy, Humble, Foxy) and SMACC (Noetic, Melodic).
 

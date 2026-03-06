@@ -32,7 +32,7 @@ templates_path = ['_templates']
 # -- Options for HTML output
 
 html_theme = 'sphinx_rtd_theme'
-html_title = ''
+html_title = 'SMACC2'
 html_baseurl = 'https://smacc2.robosoft.ai/'
 sitemap_url_scheme = '{link}'
 sitemap_filename = 'pages-sitemap.xml'

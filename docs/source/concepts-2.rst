@@ -1,4 +1,4 @@
-.. title:: SMACC2 Substate Architecture
+.. title:: Substate Architecture
 .. meta::
    :description: Substate architecture in SMACC2, covering orthogonals, clients, client behaviors, components, the component-based architecture, threading model, and signal-based communication.
 

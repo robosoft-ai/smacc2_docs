@@ -1,4 +1,4 @@
-.. title:: Research Group | SMACC2
+.. title:: Research Group
 .. meta::
    :description: Join the SMACC Research Group on LinkedIn for discussion and collaboration on SMACC2 and robotic state machines.
 

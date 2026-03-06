@@ -1,4 +1,4 @@
-.. title:: Citations | SMACC2
+.. title:: Citations
 .. meta::
    :description: Academic papers and publications that reference or use the SMACC and SMACC2 state machine libraries for ROS robotics.
 

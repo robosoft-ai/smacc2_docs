@@ -1,4 +1,4 @@
-.. title:: Troubleshooting | SMACC2
+.. title:: Troubleshooting
 .. meta::
    :description: Troubleshooting build errors and runtime errors commonly encountered with SMACC2 for ROS2.
 

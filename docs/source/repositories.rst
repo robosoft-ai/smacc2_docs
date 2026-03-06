@@ -1,4 +1,4 @@
-.. title:: Repositories | SMACC2
+.. title:: Repositories
 .. meta::
    :description: Links to the SMACC2 (ROS2) and SMACC (ROS1) GitHub repositories.
 
