@@ -5,6 +5,49 @@
 Getting Started
 ===============
 
+Install ROS 2
+--------------
+
+SMACC2 targets **ROS 2 Jazzy** on Ubuntu 24.04. Follow the official installation guide:
+
+- `ROS 2 Jazzy Installation <https://docs.ros.org/en/jazzy/Installation/Ubuntu-Install-Debs.html>`_
+
+After installing, source the setup file:
+
+.. code-block:: bash
+
+   source /opt/ros/jazzy/setup.bash
+
+Install SMACC2
+----------------
+
+Create a colcon workspace, clone the SMACC2 repository, install dependencies, and build:
+
+.. code-block:: bash
+
+   mkdir -p ~/colcon_ws/src
+   cd ~/colcon_ws/src
+   git clone https://github.com/robosoft-ai/SMACC2.git -b jazzy
+   cd ~/colcon_ws
+   rosdep install --from-paths src --ignore-src -r -y
+   colcon build
+
+Source the workspace after the build completes:
+
+.. code-block:: bash
+
+   source ~/colcon_ws/install/setup.bash
+
+Download the SMACC Viewer (RTA)
+---------------------------------
+
+The SMACC Runtime Analyzer (RTA) is a graphical tool for real-time visualization and debugging of SMACC2 state machines. Download and install instructions are available at:
+
+- `SMACC Viewer Installation <https://robosoft.ai/viewer>`_
+
+|
+|
+
 Naming Convention
 -----------------
 
