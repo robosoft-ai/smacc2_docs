@@ -1,6 +1,7 @@
-.. title:: My Custom Browser Tab Title
-.. meta:: Custom Meta Description
-  
+.. title:: SMACC2 – State Machine Asynchronous C++
+.. meta::
+   :description: An Event-Driven, Asynchronous, Behavioral State Machine Library for real-time ROS2 (Robotic Operating System) applications written in C++
+
 SMACC2
 ===================================
 
@@ -18,9 +19,9 @@ SMACC2: State Machine Asynchronous C++ for ROS2 Applications
 
 Welcome to the documentation for SMACC2, a high performance, behavioral state machine library for robotic autonomy. 
 
-* Check out the :doc:`getting started<getting started>` to start using SMACC2.
+* Check out the :doc:`getting started<getting-started>` to start using SMACC2.
 * Visit the :doc:`repositories<repositories>` for links to learn about specific packages.
-* Familiarize yourself with :doc:`concepts<concepts1>` essential to understanding SMACC2.
+* Familiarize yourself with :doc:`concepts<concepts-1>` essential to understanding SMACC2.
 * Scan through the :doc:`Troubleshooting <troubleshooting>` for answers to common questions.
 
 .. note::
