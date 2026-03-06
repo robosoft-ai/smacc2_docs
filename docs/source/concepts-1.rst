@@ -1,8 +1,8 @@
 Concepts I - HSM Architecture
-=====
+==============================
 
 Hierarchical States
-----------------
+-------------------
 Let’s talk about SMACC support for hierarchical states…
 
 .. image:: images/SMACC-State-Hierarchy.jpg
@@ -54,7 +54,7 @@ In SMACC we’ve adapted the Transition Table to the behavioral state machine (a
 |
 
 Order of Function Calls
-----------------
+-----------------------
 
 In SMACC States, the standard function calls are…
 

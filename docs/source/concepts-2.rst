@@ -1,8 +1,8 @@
 Concepts II - Substate Architecture
-=====
+====================================
 
 Object Lifetimes
-------------
+----------------
 
 SMACC2 runtime objects fall into two categories based on their lifetime:
 
@@ -26,7 +26,7 @@ Understanding this distinction is essential. Because client behaviors are state-
 |
 
 Intro to Substate Objects
-------------
+-------------------------
 
 State Machines, are ultimately about the organization of code.
 
@@ -186,7 +186,7 @@ Clients
 |
 
 Client Behaviors
-------------
+----------------
 
 **Default Events**
 
@@ -215,7 +215,7 @@ Enter SMACC components. A component is a long-lived object that is intended to b
 |
 
 Threading Model
-------------
+---------------
 
 **State Machine Event Processing**
 
@@ -227,7 +227,7 @@ Asynchronous threads are substantially more complex to reason about and manage, 
 |
 
 Updateability
-------------
+-------------
 
 **Updateable Class**
 
@@ -249,7 +249,7 @@ The SmaccSignal approach is not just convenience -- it is essential for correctn
 |
 
 State Reactors
-------------
+--------------
 
 In an event-driven state machine…
 

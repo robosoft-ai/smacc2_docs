@@ -1,8 +1,8 @@
 Getting Started
-=====
+===============
 
 Naming Convention
-------------
+-----------------
 
 Because of the complexities of c++ template code and state machines in general, the Authors of the SMACC library developed a naming convention that users are strongly encouraged to follow.
 **Benefits of Adopting the Convention**
@@ -16,17 +16,17 @@ And the third benefit, is that the SMACC development tools, such as the SMACC Vi
 
 Header files have the following format…
 
-- sm_ = state machine (ex: sm_dance_bot.h)
-- ms_ = mode state (ex: ms_recover.h)
-- ss_ = super state (ex: ss_sequence_1.h)
-- st_ = state (ex: st_navigate_to_waypoints_x.h)
-- sti_ = inner state (ex: sti_radial_rotate.h)
-- sr_ = state reactor (ex: sr_all_events_go.h)
-- or_ = orthogonal (ex: or_navigation.h)
-- cl_ = client (ex: cl_move_base_z.h)
-- cb_ = client behavior (ex: cb_timeout_watchdog.h)
-- cp_ = component (ex: cp_odom_tracker.h)
-- ev_ = event (ex: ev_navigation_success.h)
+- ``sm_`` = state machine (ex: sm_dance_bot.h)
+- ``ms_`` = mode state (ex: ms_recover.h)
+- ``ss_`` = super state (ex: ss_sequence_1.h)
+- ``st_`` = state (ex: st_navigate_to_waypoints_x.h)
+- ``sti_`` = inner state (ex: sti_radial_rotate.h)
+- ``sr_`` = state reactor (ex: sr_all_events_go.h)
+- ``or_`` = orthogonal (ex: or_navigation.h)
+- ``cl_`` = client (ex: cl_move_base_z.h)
+- ``cb_`` = client behavior (ex: cb_timeout_watchdog.h)
+- ``cp_`` = component (ex: cp_odom_tracker.h)
+- ``ev_`` = event (ex: ev_navigation_success.h)
 
 And then classes have the following format…
 
@@ -46,7 +46,7 @@ And then classes have the following format…
 |
 
 State Machine Folder Structure
-------------
+------------------------------
 
 **Example State Machine Folder Structure**
 
@@ -81,7 +81,7 @@ The ``include/sm_example/sm_example.hpp`` header is the main state machine defin
 |
 
 Client Library Folder Structure
-------------
+-------------------------------
 
 **Example Client Library Folder Structure**
 

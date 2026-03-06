@@ -1,5 +1,5 @@
 Citations
-=====
+=========
 
 **A SMACC based mission control system for autonomous underwater vehicles:**
 

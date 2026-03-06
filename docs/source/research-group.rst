@@ -1,5 +1,5 @@
 SMACC Research Group
-=====
+====================
 
 Here is the link to the SMACC Research Group (found on linkedin)
 

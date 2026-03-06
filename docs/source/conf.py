@@ -6,8 +6,8 @@ project = 'SMACC2'
 copyright = '2026, Robosoft Inc.'
 author = 'Brett Aldrich'
 
-release = '0.1'
-version = 'State Machine Asynchronous C++'
+release = ''
+version = ''
 
 # -- General configuration
 
