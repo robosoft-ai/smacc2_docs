@@ -218,7 +218,7 @@ You learned:
 Further Reading
 ---------------
 
-- :doc:`/concepts-1` — Hierarchical state machine architecture
-- :doc:`/concepts-2` — Advanced concepts (substates, orthogonals, events, threading)
+- :doc:`/concepts/hsm-architecture` — Hierarchical state machine architecture
+- :doc:`/concepts/substate-architecture` — Substates, orthogonals, events, components
 - :doc:`/how-to/how-to-px4` — PX4 integration reference
 - :doc:`/how-to/how-to-nav2` — Nav2 integration reference

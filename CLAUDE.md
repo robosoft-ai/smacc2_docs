@@ -37,9 +37,14 @@ The site is auto-built by Read the Docs on push to `main` (configured in `.readt
 
 ## Document Tree (defined in index.rst toctree)
 
-`getting-started` → `concepts-1` → `concepts-2` → `repositories` → `debians` → `demos` → `api-documentation` → `troubleshooting` → `about` → `research-group` → `other-resources` → `citations`
+`getting-started` → `concepts/index` → `tutorials/index` → `how-to/index` → `repositories` → `debians` → `demos` → `api-documentation` → `troubleshooting` → `about` → `research-group` → `other-resources` → `citations`
 
-The substantive technical content is in `concepts-1.rst` (HSM architecture, state functions, transitions) and `concepts-2.rst` (substates, orthogonals, events, clients, client behaviors, components, component-based architecture, threading model). Most other pages are link collections or embedded video demos.
+The substantive technical content is organized under `concepts/`:
+- `concepts/basics.rst` — state functions, transitions, function call order, naming conventions, folder structures, threading model, SmaccSignal
+- `concepts/hsm-architecture.rst` — hierarchical states, mode states, super states, inner state loops, deep history, state-local storage
+- `concepts/substate-architecture.rst` — object lifetimes, orthogonals, events, clients, client behaviors, components, component-based architecture, state reactors
+
+Most other pages are link collections or embedded video demos.
 
 ## SEO & Analytics
 
