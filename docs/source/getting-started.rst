@@ -21,22 +21,37 @@ After installing, source the setup file:
 Install SMACC2
 ----------------
 
-Create a colcon workspace, clone the SMACC2 repository, install dependencies, and build:
+Create a ROS 2 workspace:
 
 .. code-block:: bash
 
-   mkdir -p ~/colcon_ws/src
-   cd ~/colcon_ws/src
-   git clone https://github.com/robosoft-ai/SMACC2.git -b jazzy
-   cd ~/colcon_ws
+   mkdir -p ~/ros2_ws/src
+
+Clone the SMACC2 repository:
+
+.. code-block:: bash
+
+   cd ~/ros2_ws/src
+   git clone https://github.com/robosoft-ai/SMACC2.git
+
+Install dependencies:
+
+.. code-block:: bash
+
+   cd ~/ros2_ws
    rosdep install --from-paths src --ignore-src -r -y
+
+Build:
+
+.. code-block:: bash
+
    colcon build
 
 Source the workspace after the build completes:
 
 .. code-block:: bash
 
-   source ~/colcon_ws/install/setup.bash
+   source ~/ros2_ws/install/setup.bash
 
 Download the SMACC Viewer (RTA)
 ---------------------------------
