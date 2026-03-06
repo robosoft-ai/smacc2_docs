@@ -63,3 +63,8 @@ a {
 h1 {
     color: #329d9d;
 }
+
+.rst-content code.literal, .rst-content tt.literal {
+  color: #123a3a;
+  white-space: normal;
+}
