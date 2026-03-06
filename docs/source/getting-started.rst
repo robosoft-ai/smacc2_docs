@@ -1,3 +1,7 @@
+.. title:: Getting Started | SMACC2
+.. meta::
+   :description: Naming conventions, folder structures, and setup instructions for getting started with the SMACC2 state machine library for ROS2.
+
 Getting Started
 ===============
 

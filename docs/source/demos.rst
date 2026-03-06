@@ -1,3 +1,7 @@
+.. title:: Demos | SMACC2
+.. meta::
+   :description: Video demos of SMACC2 and SMACC state machines controlling robots in simulation and real-world applications.
+
 Demos
 =====
 

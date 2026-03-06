@@ -1,3 +1,7 @@
+.. title:: About | SMACC2
+.. meta::
+   :description: License and contact information for the SMACC2 state machine library.
+
 About
 =====
 

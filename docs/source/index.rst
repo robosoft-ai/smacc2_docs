@@ -1,4 +1,4 @@
-.. title:: SMACC2 – State Machine Asynchronous C++
+.. title:: SMACC2 | State Machine Asynchronous C++
 .. meta::
    :description: An Event-Driven, Asynchronous, Behavioral State Machine Library for real-time ROS2 (Robotic Operating System) applications written in C++
 

@@ -1,3 +1,7 @@
+.. title:: Other Resources | SMACC2
+.. meta::
+   :description: Additional SMACC2 resources including the ROS Discourse announcement, Construct interview, and Sense Think Act podcast.
+
 Other Resources
 ----------------
 
