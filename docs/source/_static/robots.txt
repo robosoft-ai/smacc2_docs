@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://smacc2.robosoft.ai/sitemap.xml
+Sitemap: https://smacc2.robosoft.ai/pages-sitemap.xml

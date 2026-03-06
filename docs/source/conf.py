@@ -35,6 +35,7 @@ html_theme = 'sphinx_rtd_theme'
 html_title = ''
 html_baseurl = 'https://smacc2.robosoft.ai/'
 sitemap_url_scheme = '{link}'
+sitemap_filename = 'pages-sitemap.xml'
 html_static_path = ['_static']
 html_css_files = ['custom.css']
 
