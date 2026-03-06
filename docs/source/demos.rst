@@ -10,7 +10,7 @@ YouTube Channel: https://www.youtube.com/channel/UC3sUMYOmWi_DC6_bnEu-LgQ
 SMACC2 Demos
 ----------------
 
-**SMACC state machine autonomously controlling the PX4 flight stack**
+**SMACC state machine autonomously controlling the PX4 flight stack** -- `source <https://github.com/robosoft-ai/SMACC2/tree/jazzy/smacc2_sm_reference_library/sm_cl_px4_mr_test_1>`__
 
 .. raw:: html
 
@@ -18,7 +18,7 @@ SMACC2 Demos
       <iframe width="450" height="300" src="https://www.youtube.com/embed/Ct0sxzTK4Uo" frameborder="1" allowfullscreen></iframe>
     </div>
 
-**Let's Dock!**
+**Let's Dock!** -- `source <https://github.com/robosoft-ai/nova_carter_sm_library/tree/main/sm_nav2_test_7>`__
 
 .. raw:: html
 
@@ -26,7 +26,7 @@ SMACC2 Demos
       <iframe width="450" height="300" src="https://www.youtube.com/embed/NoYUEY2D_-s" frameborder="1" allowfullscreen></iframe>
     </div>
 
-**This is what an autonomous application demo should look like**
+**This is what an autonomous application demo should look like** -- `source <https://github.com/robosoft-ai/nova_carter_sm_library/tree/main/sm_nav2_test_2>`__
 
 .. raw:: html
 
@@ -34,7 +34,7 @@ SMACC2 Demos
       <iframe width="450" height="300" src="https://www.youtube.com/embed/1kBS_XwqG8Q" frameborder="1" allowfullscreen></iframe>
     </div>
 
-**Autonomous Exploration & Mapping with SMACC inside Isaac Sim**
+**Autonomous Exploration & Mapping with SMACC inside Isaac Sim** -- `source <https://github.com/robosoft-ai/sm_isaac_exploration>`__
 
 .. raw:: html
 
@@ -42,7 +42,7 @@ SMACC2 Demos
       <iframe width="450" height="300" src="https://www.youtube.com/embed/XS5ktWK9F7w" frameborder="1" allowfullscreen></iframe>
     </div>
 
-**SMACC First Demo UE5**
+**SMACC First Demo UE5** -- `source <https://github.com/robosoft-ai/SMACC2/tree/humble/smacc2_sm_reference_library/sm_dancebot_ue>`__
 
 .. raw:: html
 
@@ -50,7 +50,7 @@ SMACC2 Demos
       <iframe width="450" height="300" src="https://www.youtube.com/embed/9OiK0JuvOVA" frameborder="1" allowfullscreen></iframe>
     </div>
 
-**SMACC2 demonstrates concurrent control of two robotic arms using ROS2, MoveIt2 and ros2_control**
+**SMACC2 demonstrates concurrent control of two robotic arms using ROS2, MoveIt2 and ros2_control** -- `source <https://github.com/robosoft-ai/SMACC2/tree/jazzy/smacc2_sm_reference_library/sm_panda_cl_moveit2z_cb_inventory>`__
 
 .. raw:: html
 
@@ -58,7 +58,7 @@ SMACC2 Demos
       <iframe width="450" height="300" src="https://www.youtube.com/embed/csmPn1vfoZ8" frameborder="1" allowfullscreen></iframe>
     </div>
 
-**Dance Party at AWS Warehouse Demo 3**
+**Dance Party at AWS Warehouse Demo 3** -- `source <https://github.com/robosoft-ai/SMACC2/tree/humble/smacc2_sm_reference_library/sm_dance_bot_warehouse_3>`__
 
 .. raw:: html
 
@@ -66,7 +66,7 @@ SMACC2 Demos
       <iframe width="450" height="300" src="https://www.youtube.com/embed/_4QZdvdTptI" frameborder="1" allowfullscreen></iframe>
     </div>
 
-**Dance Party at AWS Warehouse Demo 2**
+**Dance Party at AWS Warehouse Demo 2** -- `source <https://github.com/robosoft-ai/SMACC2/tree/humble/smacc2_sm_reference_library/sm_dance_bot_warehouse_2>`__
 
 .. raw:: html
 
@@ -74,7 +74,7 @@ SMACC2 Demos
       <iframe width="450" height="300" src="https://www.youtube.com/embed/A3kmCQS_ww8" frameborder="1" allowfullscreen></iframe>
     </div>
 
-**Dance Party at AWS Warehouse Demo 1**
+**Dance Party at AWS Warehouse Demo 1** -- `source <https://github.com/robosoft-ai/SMACC2/tree/humble/smacc2_sm_reference_library/sm_dance_bot_warehouse>`__
 
 .. raw:: html
 
@@ -109,7 +109,7 @@ SMACC Demos
       <iframe width="450" height="300" src="https://www.youtube.com/embed/JubnJARTgI4" frameborder="1" allowfullscreen></iframe>
     </div>
 
-**Fetch Two Table Whiskey Pour**
+**Fetch Two Table Whiskey Pour** -- `source <https://github.com/reelrbtx/SMACC/tree/master/smacc_sm_reference_library/sm_fetch_two_table_whiskey_pour>`__
 
 .. raw:: html
 
@@ -117,7 +117,7 @@ SMACC Demos
       <iframe width="450" height="300" src="https://www.youtube.com/embed/sM524A4PpDk" frameborder="1" allowfullscreen></iframe>
     </div>
 
-**Fetch Six Table Pick N Sort + The SMACC MoveGroupInterface Client**
+**Fetch Six Table Pick N Sort + The SMACC MoveGroupInterface Client** -- `source <https://github.com/reelrbtx/SMACC/tree/master/smacc_sm_reference_library/sm_fetch_six_table_pick_n_sort_1>`__
 
 .. raw:: html
 
