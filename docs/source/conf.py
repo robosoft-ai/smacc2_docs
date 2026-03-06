@@ -37,6 +37,7 @@ html_css_files = ['custom.css']
 
 html_favicon = '_static/SiteIcon-White.png'
 html_show_sourcelink = False
+html_extra_path = ['_static/robots.txt']
 
 # -- Options for EPUB output
 epub_show_urls = 'footnote'
