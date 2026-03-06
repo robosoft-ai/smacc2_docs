@@ -18,6 +18,7 @@ extensions = [
     'sphinx.ext.autosummary',
     'sphinx.ext.intersphinx',
     'sphinx_copybutton',
+    'sphinx_sitemap',
 ]
 
 intersphinx_mapping = {
@@ -32,6 +33,7 @@ templates_path = ['_templates']
 
 html_theme = 'sphinx_rtd_theme'
 html_title = ''
+html_baseurl = 'https://smacc2.robosoft.ai/'
 html_static_path = ['_static']
 html_css_files = ['custom.css']
 
