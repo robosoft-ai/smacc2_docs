@@ -68,3 +68,8 @@ h1 {
   color: #257474 !important;
   white-space: normal;
 }
+
+.wy-nav-top {
+    background:#343131;
+    font-size:150%
+}
