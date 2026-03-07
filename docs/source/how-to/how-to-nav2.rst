@@ -202,6 +202,48 @@ Standard behavior events:
 - ``EvCbSuccess<CbBehavior, OrNavigation>``
 - ``EvCbFailure<CbBehavior, OrNavigation>``
 
+Using Client Behaviors
+-----------------------
+
+Client behaviors are configured in a state's ``staticConfigure()`` method using ``configure_orthogonal<>``. The behavior's constructor parameters are passed as arguments. When the state is entered, the behavior executes asynchronously and posts events (``EvCbSuccess``, ``EvCbFailure``) that drive transitions:
+
+.. code-block:: c++
+
+   struct StNavigateToWaypoint1
+     : smacc2::SmaccState<StNavigateToWaypoint1, SmNav2GazeboTest1>
+   {
+     using SmaccState::SmaccState;
+
+     typedef mpl::list<
+       // Transition on navigation success → go to next state
+       Transition<smacc2::EvActionSucceeded<ClNav2Z, OrNavigation>,
+                  StRotate, SUCCESS>,
+       // Transition on navigation abort → go to error state
+       Transition<smacc2::EvActionAborted<ClNav2Z, OrNavigation>,
+                  StFinalState, ABORT>
+     > reactions;
+
+     static void staticConfigure()
+     {
+       // CbNavigateGlobalPosition(x, y, yaw) — navigate to map coordinates
+       configure_orthogonal<OrNavigation, CbNavigateGlobalPosition>(
+           2.0, 0.0, 0.0);
+     }
+   };
+
+The pattern is the same for all Nav2 behaviors — change the behavior class and its parameters:
+
+.. code-block:: c++
+
+   // Rotate in place using a pure spinning planner
+   configure_orthogonal<OrNavigation, CbPureSpinning>(M_PI, 0.5);
+
+   // Navigate forward 3 meters
+   configure_orthogonal<OrNavigation, CbNavigateForward>(3.0f);
+
+   // Retrace the recorded odometry path in reverse
+   configure_orthogonal<OrNavigation, CbUndoPathBackwards>();
+
 Orthogonal Setup
 -----------------
 

@@ -112,6 +112,44 @@ Behaviors
 
 All behaviors post ``EvCbSuccess`` on completion and ``EvCbFailure`` on error.
 
+Using Client Behaviors
+-----------------------
+
+Client behaviors are configured in a state's ``staticConfigure()`` method using ``configure_orthogonal<>``. The behavior's constructor parameters are passed as arguments. When the state is entered, the behavior executes asynchronously and posts events (``EvCbSuccess``, ``EvCbFailure``) that drive transitions:
+
+.. code-block:: c++
+
+   struct StGoToWaypoint1 : smacc2::SmaccState<StGoToWaypoint1, MsInFlight>
+   {
+     using SmaccState::SmaccState;
+
+     typedef mpl::list<
+       // Transition on success → go to orbit state
+       Transition<EvCbSuccess<CbGoToLocation, OrPx4>,
+                  StOrbitLocation, SUCCESS>
+     > reactions;
+
+     static void staticConfigure()
+     {
+       // CbGoToLocation(x, y, z) — fly to NED coordinates
+       // 10m North, 0m East, 5m altitude (Z negative = up in NED)
+       configure_orthogonal<OrPx4, CbGoToLocation>(10.0f, 0.0f, -5.0f);
+     }
+   };
+
+The pattern is the same for all PX4 behaviors — change the behavior class and its parameters:
+
+.. code-block:: c++
+
+   // Arm the vehicle
+   configure_orthogonal<OrPx4, CbArmPX4>();
+
+   // Take off to 5 meters altitude
+   configure_orthogonal<OrPx4, CbTakeOff>(5.0f);
+
+   // Orbit a point: centerX, centerY, altitude, radius, angularVelocity, numOrbits
+   configure_orthogonal<OrPx4, CbOrbitLocation>(10.0f, 0.0f, -5.0f, 5.0f, 0.5f, 3);
+
 Orthogonal Setup
 -----------------
 

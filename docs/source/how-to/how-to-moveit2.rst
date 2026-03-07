@@ -134,6 +134,65 @@ Trajectory behaviors may also post:
 - ``EvJointDiscontinuity<CbBehavior, OrManipulation>`` — IK produced a joint space discontinuity
 - ``EvIncorrectInitialPosition<CbBehavior, OrManipulation>`` — current position doesn't match trajectory start
 
+Using Client Behaviors
+-----------------------
+
+Client behaviors are configured in a state's ``staticConfigure()`` method using ``configure_orthogonal<>``. The behavior's constructor parameters are passed as arguments. When the state is entered, the behavior executes asynchronously and posts events (``EvCbSuccess``, ``EvCbFailure``) that drive transitions:
+
+.. code-block:: c++
+
+   struct StMoveJoints1
+     : smacc2::SmaccState<StMoveJoints1, SmPandaClMoveit2zCbInventory>
+   {
+     using SmaccState::SmaccState;
+
+     typedef boost::mpl::list<
+       // Transition on success → go to next state
+       Transition<EvCbSuccess<CbMoveJoints, OrArm>, StPause3, SUCCESS>
+     > reactions;
+
+     static void staticConfigure()
+     {
+       // CbMoveJoints(jointValueTarget) — move to joint configuration
+       std::map<std::string, double> jointValues{
+         {"panda_joint1", 0.0},
+         {"panda_joint2", 0.0},
+         {"panda_joint3", 0.0},
+         {"panda_joint4", -M_PI / 2},
+         {"panda_joint5", 0.0},
+         {"panda_joint6", M_PI / 2},
+         {"panda_joint7", 0.0}
+       };
+       configure_orthogonal<OrArm, CbMoveJoints>(jointValues);
+     }
+
+     void runtimeConfigure()
+     {
+       // Optional: adjust behavior parameters after instantiation
+       this->getClientBehavior<OrArm, CbMoveJoints>()->scalingFactor_ = 1;
+     }
+   };
+
+The pattern is the same for all MoveIt2 behaviors — change the behavior class and its parameters:
+
+.. code-block:: c++
+
+   // Move end-effector to a Cartesian pose
+   geometry_msgs::msg::PoseStamped target_pose;
+   target_pose.header.frame_id = "panda_link0";
+   target_pose.pose.position.x = 0.3;
+   target_pose.pose.position.y = 0.2;
+   target_pose.pose.position.z = 0.4;
+   target_pose.pose.orientation.w = 1.0;
+   configure_orthogonal<OrArm, CbMoveEndEffector>(target_pose, "panda_link8");
+
+   // Move to a named configuration loaded from YAML
+   configure_orthogonal<OrArm, CbMoveKnownState>(
+       "sm_panda_cl_moveit2z_cb_inventory", "config/known_states/home.yaml");
+
+   // Rotate end-effector 90 degrees around its Z-axis
+   configure_orthogonal<OrArm, CbEndEffectorRotate>(M_PI / 2);
+
 Orthogonal Setup
 -----------------
 
