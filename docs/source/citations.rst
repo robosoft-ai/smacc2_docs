@@ -9,7 +9,7 @@ Citations
 
 Carvalho, David, et al. "A SMACC based mission control system for autonomous underwater vehicles." OCEANS 2022, Hampton Roads. IEEE, 2022.
 
-.. code-block:: bash
+.. code-block:: bibtex
 
    @inproceedings{carvalho2022smacc,
      title={A SMACC based mission control system for autonomous underwater vehicles},
@@ -26,7 +26,7 @@ Carvalho, David, et al. "A SMACC based mission control system for autonomous und
 
 Vismanis, Oskars, et al. "Robotic system for post office package handling." Applied Sciences 13.13 (2023): 7643.
 
-.. code-block:: bash
+.. code-block:: bibtex
 
    @article{vismanis2023robotic,
      title={Robotic system for post office package handling},
@@ -46,7 +46,7 @@ Vismanis, Oskars, et al. "Robotic system for post office package handling." Appl
 
 Schrick, Manuel, Johannes Hinckeldeyn, and Marko Thiel. "A novel control architecture for mobile robots in safety-critical applications." 2022 27th International Conference on Automation and Computing (ICAC). IEEE, 2022.
 
-.. code-block:: bash
+.. code-block:: bibtex
 
    @inproceedings{schrick2022novel,
      title={A novel control architecture for mobile robots in safety-critical applications},
@@ -64,7 +64,7 @@ Schrick, Manuel, Johannes Hinckeldeyn, and Marko Thiel. "A novel control archite
 
 González-Santamarta, Miguel Á., et al. "Yasmin: Yet another state machine." Iberian Robotics conference. Cham: Springer International Publishing, 2022.
 
-.. code-block:: bash
+.. code-block:: bibtex
 
    @inproceedings{gonzalez2022yasmin,
      title={Yasmin: Yet another state machine},
@@ -82,7 +82,7 @@ González-Santamarta, Miguel Á., et al. "Yasmin: Yet another state machine." Ib
 
 Al-Batati, Abdulrahman S., Anis Koubaa, and Mohamed Abdelkader. "ROS 2 Key Challenges and Advances: A Survey of ROS 2 Research, Libraries, and Applications." Preprint (2024).
 
-.. code-block:: bash
+.. code-block:: bibtex
 
    @article{al2024ros,
      title={ROS 2 Key Challenges and Advances: A Survey of ROS 2 Research, Libraries, and Applications},
@@ -98,7 +98,7 @@ Al-Batati, Abdulrahman S., Anis Koubaa, and Mohamed Abdelkader. "ROS 2 Key Chall
 
 Ghzouli, Razan, et al. "Behavior trees and state machines in robotics applications." IEEE Transactions on Software Engineering 49.9 (2023): 4243-4267.
 
-.. code-block:: bash
+.. code-block:: bibtex
 
    @article{ghzouli2023behavior,
      title={Behavior trees and state machines in robotics applications},
@@ -118,7 +118,7 @@ Ghzouli, Razan, et al. "Behavior trees and state machines in robotics applicatio
 
 Kesy, Anton. Integration and Evaluation of a Framework for Decision-Making in Autonomous Systems. Diss. Hochschule Offenburg, 2024.
 
-.. code-block:: bash
+.. code-block:: bibtex
 
    @phdthesis{kesy2024integration,
      title={Integration and Evaluation of a Framework for Decision-Making in Autonomous Systems},
@@ -134,7 +134,7 @@ Kesy, Anton. Integration and Evaluation of a Framework for Decision-Making in Au
 
 Steinbrink, Marco. "Sampling-Based Exploration Strategies for Mobile Robot Autonomy." (2023).
 
-.. code-block:: bash
+.. code-block:: bibtex
 
    @article{steinbrink2023sampling,
      title={Sampling-Based Exploration Strategies for Mobile Robot Autonomy},

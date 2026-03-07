@@ -7,6 +7,7 @@ HSM Architecture
 
 Hierarchical States
 -------------------
+
 Let's talk about SMACC support for hierarchical states...
 
 .. image:: /images/SMACC-State-Hierarchy.jpg

@@ -40,8 +40,3 @@ The Doxygen documentation for the `SMACC Melodic branch <https://robosoft-ai.git
 .. code-block:: console
 
    https://robosoft-ai.github.io/smacc_doxygen/melodic/html/namespaces.html
-
-
-
-
-

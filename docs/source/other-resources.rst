@@ -3,7 +3,7 @@
    :description: Additional SMACC2 resources including the ROS Discourse announcement, Construct interview, and Sense Think Act podcast.
 
 Other Resources
-----------------
+---------------
 
 The SMACC release announcement thread on `ROS Discourse <https://discourse.ros.org/t/introducing-the-smacc-state-machine-library/14963/>`_:
 
@@ -22,5 +22,3 @@ Sense Think Act Podcast `Interview #10 <https://www.youtube.com/watch?v=3ju1g6g5
 .. code-block:: console
 
    https://www.youtube.com/watch?v=3ju1g6g51ss
-
-

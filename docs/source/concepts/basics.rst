@@ -38,7 +38,7 @@ In SMACC we've adapted the Transition Table to the behavioral state machine (alo
 Order of Function Calls
 -----------------------
 
-In SMACC States, the standard function calls are...
+In SMACC States, the standard function calls are....
 
 - staticConfigure()
 - runtimeConfigure()
@@ -46,7 +46,7 @@ In SMACC States, the standard function calls are...
 - update()* -- Must be added explicitly
 - onExit()
 
-In the client behaviors, the standard function calls are..
+In the client behaviors, the standard function calls are...
 
 - runtimeConfigure()
 - onEntry()
@@ -75,6 +75,7 @@ Naming Convention
 -----------------
 
 Because of the complexities of c++ template code and state machines in general, the Authors of the SMACC library developed a naming convention that users are strongly encouraged to follow.
+
 **Benefits of Adopting the Convention**
 
 The first benefit, is that the convention greatly improves code readability, especially from inside an IDE or the SMACC doxygen pages.
@@ -82,6 +83,7 @@ The first benefit, is that the convention greatly improves code readability, esp
 The second benefit, is that if you run into issues, the SMACC support team can quickly and easily get a handle on the broader picture of your problem.
 
 And the third benefit, is that the SMACC development tools, such as the SMACC Viewer and the yet-to-be-built code-generator will utilize this same naming convention and by adopting it, you ensure compatibility.
+
 **Prefixes**
 
 Header files have the following format...
