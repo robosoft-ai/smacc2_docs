@@ -20,8 +20,6 @@ Jazzy ARM64 `Binary <https://build.ros2.org/job/Jbin_unv8_uNv8__smacc2__ubuntu_n
 
    https://build.ros2.org/job/Jbin_unv8_uNv8__smacc2__ubuntu_noble_arm64__binary/
 
-|
-
 ROS2 Humble
 ----------------
 

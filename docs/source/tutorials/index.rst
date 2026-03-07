@@ -19,8 +19,6 @@ Basic
    tutorial-3-orthogonals-concurrent-behaviors
    tutorial-4-navigation-nav2-gazebo
 
-|
-
 Intermediate
 ------------
 
@@ -31,8 +29,6 @@ Intermediate
    tutorial-6-components
    tutorial-7-creating-a-client
    tutorial-8-events-state-reactors
-
-|
 
 Advanced
 --------

@@ -18,8 +18,6 @@ Overview
 
 Reference state machine: ``sm_nav2_gazebo_test_1``
 
-|
-
 Orthogonal Setup
 -----------------
 
@@ -38,8 +36,6 @@ Orthogonal Setup
        client->createComponent<cl_nav2z::CpAmcl>();
      }
    };
-
-|
 
 Components
 ----------
@@ -71,8 +67,6 @@ Components
      - Enable/disable costmap layers at runtime
    * - ``CpNav2ActionInterface``
      - Low-level Nav2 action client wrapper
-
-|
 
 Navigation Behaviors
 ---------------------
@@ -146,8 +140,6 @@ SLAM Behaviors
    * - ``CbSaveSlamMap``
      - Save the current SLAM map
 
-|
-
 Events
 ------
 
@@ -162,8 +154,6 @@ Standard behavior events:
 
 - ``EvCbSuccess<CbBehavior, OrNavigation>``
 - ``EvCbFailure<CbBehavior, OrNavigation>``
-
-|
 
 Example: Navigate to Two Waypoints
 ------------------------------------

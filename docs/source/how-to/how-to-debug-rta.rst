@@ -28,8 +28,6 @@ The viewer shows:
 - **Orthogonal status** — which behaviors are active on each orthogonal
 - **Event flow** — which events triggered which transitions
 
-|
-
 ROS 2 Topic Debugging
 -----------------------
 
@@ -81,8 +79,6 @@ Node Inspection
    # See all topics/services for your state machine node
    ros2 node info /[sm]
 
-|
-
 Common Debugging Techniques
 -----------------------------
 
@@ -107,8 +103,6 @@ Unexpected Transitions
 1. Monitor the transition log: ``ros2 topic echo /[sm]/smacc/transition_log``
 2. Check if multiple events are racing — the first matching event wins
 3. Verify your transition table ``mpl::list`` order
-
-|
 
 Logging
 --------

@@ -15,8 +15,6 @@ Build Errors
 - `Header dependency missing <https://github.com/robosoft-ai/SMACC2/issues/559>`_
 - `Redundant test dependencies in package.xml of moveit2z_client <https://github.com/robosoft-ai/SMACC2/issues/583>`_
 
-|
-
 Runtime Errors
 ----------------
 
@@ -28,8 +26,6 @@ Runtime Errors
 - `State machine blocks with AsyncCb cannot return and busy waiting std::future <https://github.com/robosoft-ai/SMACC2/issues/330>`_
 - `Support for multiple CBs subscribed to single client <https://github.com/robosoft-ai/SMACC/issues/73>`_
 - `Transition back to previous state using history <https://github.com/robosoft-ai/SMACC/issues/52>`_
-
-|
 
 General Questions
 -----------------

@@ -30,8 +30,6 @@ Key rules:
 - Components live as long as the state machine. They are not destroyed on state transitions.
 - Components expose ``SmaccSignal`` members for behaviors to connect to.
 
-|
-
 Pattern 1: Subscriber + Data Store
 ------------------------------------
 
@@ -87,8 +85,6 @@ Key elements:
 - **SmaccSignal** — ``onPositionReceived_`` fires in the subscription callback so behaviors can react to position updates
 - **Thread safety** — the subscription callback runs on a ROS executor thread, so all shared data is mutex-protected
 
-|
-
 Pattern 2: Updatable Monitor
 ------------------------------
 
@@ -141,8 +137,6 @@ Key elements:
 - **Goal checking** — ``update()`` reads the current position from ``CpVehicleLocalPosition``, compares it against the goal, and fires ``onGoalReached_`` when within tolerance
 - **Signal** — behaviors like ``CbTakeOff`` and ``CbGoToLocation`` connect to ``onGoalReached_`` to know when to post success
 
-|
-
 Component-to-Component Dependencies
 -------------------------------------
 
@@ -156,8 +150,6 @@ Components can depend on sibling components within the same client:
    }
 
 This is safe because ``onInitialize()`` is called after all components are created by the client's ``onComponentInitialization()``.
-
-|
 
 SmaccSignal: Declaring and Connecting
 --------------------------------------
@@ -186,8 +178,6 @@ Connect to the signal from a behavior:
 
 Always use ``createSignalConnection()`` instead of raw ``boost::signals2::connect()``. The framework manages connection lifetimes and automatically disconnects when state-scoped objects (like behaviors) are destroyed on state exit.
 
-|
-
 Summary
 -------
 
@@ -198,8 +188,6 @@ You learned:
 - The updatable monitor pattern: ``ISmaccUpdatable`` for periodic checking → ``SmaccSignal``
 - Component-to-component dependencies via ``requiresComponent()``
 - Signal declaration, firing, and safe connection via ``createSignalConnection()``
-
-|
 
 Next Steps
 ----------

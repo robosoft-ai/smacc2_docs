@@ -39,8 +39,6 @@ Vismanis, Oskars, et al. "Robotic system for post office package handling." Appl
      publisher={MDPI}
    }
 
-|
-
 
 -----
 
@@ -58,8 +56,6 @@ Schrick, Manuel, Johannes Hinckeldeyn, and Marko Thiel. "A novel control archite
      year={2022},
      organization={IEEE}
    }
-
-|
 
 
 -----
@@ -79,8 +75,6 @@ González-Santamarta, Miguel Á., et al. "Yasmin: Yet another state machine." Ib
      organization={Springer}
    }
 
-|
-
 
 -----
 
@@ -96,8 +90,6 @@ Al-Batati, Abdulrahman S., Anis Koubaa, and Mohamed Abdelkader. "ROS 2 Key Chall
      journal={Preprint},
      year={2024}
    }
-
-|
 
 
 -----
@@ -119,8 +111,6 @@ Ghzouli, Razan, et al. "Behavior trees and state machines in robotics applicatio
      publisher={IEEE}
    }
 
-|
-
 
 -----
 
@@ -136,8 +126,6 @@ Kesy, Anton. Integration and Evaluation of a Framework for Decision-Making in Au
      year={2024},
      school={Hochschule Offenburg}
    }
-
-|
 
 
 -----

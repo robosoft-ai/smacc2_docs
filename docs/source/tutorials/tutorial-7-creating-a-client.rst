@@ -56,8 +56,6 @@ This template method is called automatically by the framework when the client is
 
 ``createComponent<>()`` creates a component, calls its ``onInitialize()``, and registers it with the state machine.
 
-|
-
 Client Library Package Structure
 ---------------------------------
 
@@ -86,8 +84,6 @@ A client library is a ROS 2 package that builds into a shared library (``.so``):
    └── package.xml
 
 All the ``.cpp`` files compile into a single ``.so`` shared library. State machines link against this library and include only the headers they need.
-
-|
 
 Contrast: Clients with Logic
 ------------------------------
@@ -123,8 +119,6 @@ This pattern works but is less composable. The **orchestrator pattern** (``ClPx4
 - The client itself has no state to debug
 - Adding functionality means adding a new component, not modifying the client
 
-|
-
 Creating Your Own Client
 -------------------------
 
@@ -158,8 +152,6 @@ Then use behaviors in your states:
      configure_orthogonal<OrExample, CbBehavior1>(/* args */);
    }
 
-|
-
 Summary
 -------
 
@@ -169,8 +161,6 @@ You learned:
 - ``onComponentInitialization<TOrthogonal, TClient>()`` creates all components with type context
 - Client library package structure
 - How to create a complete client from scratch
-
-|
 
 Next Steps
 ----------

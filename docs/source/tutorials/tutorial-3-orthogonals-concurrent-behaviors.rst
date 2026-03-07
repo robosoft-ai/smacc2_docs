@@ -12,8 +12,6 @@ Prerequisites
 
 - Completed :doc:`tutorial-1-first-state-machine`
 
-|
-
 Build and Run sm_atomic_http
 -----------------------------
 
@@ -23,8 +21,6 @@ Build and Run sm_atomic_http
    colcon build --packages-select sm_atomic_http cl_ros2_timer cl_http
    source install/setup.bash
    ros2 launch sm_atomic_http sm_atomic_http.py
-
-|
 
 The State Machine
 -----------------
@@ -194,8 +190,6 @@ The HTTP Client Behavior
 
 This demonstrates a custom **typed event**: ``EvHttp<TSource, TOrthogonal>`` carries the source behavior and orthogonal type so that transition tables can match it precisely.
 
-|
-
 How Concurrent Behaviors Work
 ------------------------------
 
@@ -222,8 +216,6 @@ You can assign behaviors to multiple orthogonals in the same ``staticConfigure()
 
 Both behaviors start when the state is entered and run concurrently. The first event to match a transition wins.
 
-|
-
 Summary
 -------
 
@@ -233,8 +225,6 @@ You learned:
 - That each orthogonal owns one client and can have behaviors assigned per state
 - How typed events (``EvHttp<TSource, TOrthogonal>``) enable precise transition matching
 - That all behaviors on all orthogonals run concurrently within a state
-
-|
 
 Next Steps
 ----------

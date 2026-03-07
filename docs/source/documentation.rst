@@ -26,8 +26,6 @@ The Doxygen documentation for the `SMACC2 Foxy branch <https://robosoft-ai.githu
 
    https://robosoft-ai.github.io/smacc2_doxygen/foxy/html/namespaces.html
 
-|
-
 SMACC Doxygen
 -------------
 

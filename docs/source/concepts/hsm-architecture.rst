@@ -25,8 +25,6 @@ SMACC2 provides three levels of hierarchy above leaf states:
 
 The sections below explain each level in detail.
 
-|
-
 Mode States
 -----------
 
@@ -118,8 +116,6 @@ A PX4 multirotor mission uses six mode states to represent distinct flight phase
 
 Mode-to-mode transitions are triggered by leaf states posting events that bubble up to the mode state level. For example, when ``StWaitForReady`` posts a timer event, the transition table at the mode state or leaf state level catches it and transitions to ``MsArmedOnGround``.
 
-|
-
 Super States
 ------------
 
@@ -183,8 +179,6 @@ Key points:
 - The ``using SS = SS1::Ss1`` alias lets inner states refer to their parent generically, enabling the same inner state code to be reused across multiple super states.
 - When the loop ends (``EvLoopEnd<StiState1>``), the super state transitions to the next super state (``SS2::Ss2``) or back to a regular state.
 
-|
-
 Inner States and Loops
 ----------------------
 
@@ -243,8 +237,6 @@ How the loop works:
 
 The ``this->context<SS>()`` call accesses the parent super state, allowing inner states to read and write the super state's member variables -- this is how the iteration counter is shared across inner state transitions.
 
-|
-
 Deep History
 ------------
 
@@ -283,8 +275,6 @@ Deep history is essential for fault recovery in autonomous systems. Instead of r
 3. Resume exactly where it left off
 
 This pattern is used extensively in ``sm_multi_stage_1``, which has dedicated ``MsRecovery1`` and ``MsRecovery2`` mode states that use deep history to return to the last active state inside the operational modes.
-
-|
 
 .. _state-local-storage:
 

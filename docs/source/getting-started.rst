@@ -18,8 +18,6 @@ After installing, source the setup file:
 
    source /opt/ros/jazzy/setup.bash
 
-|
-
 Install SMACC2
 ----------------
 
@@ -54,8 +52,6 @@ Source the workspace after the build completes:
 .. code-block:: bash
 
    source ~/ros2_ws/install/setup.bash
-
-|
 
 Download the SMACC Viewer (RTA)
 ---------------------------------

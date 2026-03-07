@@ -11,8 +11,6 @@ Thank you for your interest in contributing to SMACC2. Whether it is a bug repor
 - **License:** `Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>`_
 - **ROS 2 distro:** Jazzy (Ubuntu 24.04)
 
-|
-
 Reporting Bugs and Feature Requests
 ------------------------------------
 
@@ -26,8 +24,6 @@ When filing an issue, please include as much information as you can:
 - The version of SMACC2 and ROS 2 being used
 - Any modifications you have made relevant to the bug
 - Anything unusual about your environment or deployment
-
-|
 
 Contributing via Pull Requests
 -------------------------------
@@ -57,14 +53,10 @@ Contributions via pull requests are much appreciated. Before sending us a pull r
 
 GitHub provides additional documentation on `forking a repository <https://help.github.com/articles/fork-a-repo/>`_ and `creating a pull request <https://help.github.com/articles/creating-a-pull-request/>`_.
 
-|
-
 Finding Contributions to Work On
 ----------------------------------
 
 Looking at the existing issues is a great way to find something to contribute. The `"help wanted" <https://github.com/robosoft-ai/SMACC2/issues?q=is%3Aopen+is%3Aissue+label%3A%22help+wanted%22>`_ label is a great place to start.
-
-|
 
 Contributing to Documentation
 -------------------------------
@@ -89,11 +81,8 @@ Then open ``docs/build/html/index.html`` in a browser.
 
 - Pages use reStructuredText (``.rst``) format with ``.. title::`` and ``.. meta:: :description:`` directives for SEO.
 - Follow the `Diataxis framework <https://diataxis.fr/>`_: tutorials teach, how-to guides solve, concepts explain, reference describes.
-- Use a single ``|`` line between top-level sections for consistent spacing.
 - Code examples should be drawn from real state machines in the ``smacc2_sm_reference_library`` or real client libraries whenever possible.
 - Follow the SMACC2 :doc:`naming convention <concepts/basics>` (``Sm``, ``Ms``, ``St``, ``Or``, ``Cl``, ``Cb``, ``Cp`` prefixes) in all examples.
-
-|
 
 Coding Standards
 -----------------
@@ -104,8 +93,6 @@ Coding Standards
 - Follow the SMACC2 :doc:`naming convention <concepts/basics>` for all classes and files.
 - Keep state machines header-only (states defined in ``.hpp`` files).
 - Prefer the component-based architecture: clients orchestrate, components implement, behaviors consume.
-
-|
 
 Licensing
 ----------

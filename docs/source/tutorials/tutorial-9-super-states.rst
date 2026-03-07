@@ -55,8 +55,6 @@ The state machine declaration uses the mode state as its initial state:
      }
    };
 
-|
-
 Super States
 ------------
 
@@ -154,8 +152,6 @@ Inner states access their super state's data through ``this->context<Ss1>()``:
 
 This returns a reference to the live super state instance, so you can read and write its member variables.
 
-|
-
 Hierarchy Overview
 ------------------
 
@@ -180,8 +176,6 @@ The ``sm_three_some`` hierarchy looks like this:
 
 Transitions can cross hierarchy levels. A regular state inside ``MsRun`` can transition to a super state (``StState3 → SS1::Ss1``), and a super state can transition out to another super state (``SS1::Ss1 → SS2::Ss2``) or a regular state (``SS2::Ss2 → StState4``).
 
-|
-
 Summary
 -------
 
@@ -192,8 +186,6 @@ You learned:
 - The **loop pattern**: ``checkWhileLoopConditionAndThrowEvent()`` + ``EvLoopContinue`` / ``EvLoopEnd``
 - **``this->context<Ss>()``** accesses parent super state data
 - **Deep history** (``MsRun::deep_history``) restores the full state hierarchy on recovery
-
-|
 
 Next Steps
 ----------

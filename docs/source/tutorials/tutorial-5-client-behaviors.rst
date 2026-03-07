@@ -25,8 +25,6 @@ SMACC2 provides two base classes for behaviors:
      - Asynchronous — ``onEntry()`` runs in its own thread
      - Long-running operations (wait for a condition, navigate, retry loops)
 
-|
-
 Behavior Lifecycle
 ------------------
 
@@ -41,8 +39,6 @@ Async behaviors have additional capabilities:
 - **``postSuccessEvent()``** — posts ``EvCbSuccess`` to trigger a ``SUCCESS`` transition
 - **``postFailureEvent()``** — posts ``EvCbFailure`` to trigger an ``ABORT`` transition
 - **``isShutdownRequested()``** — check this periodically in long loops to honor shutdown requests
-
-|
 
 Accessing Components
 --------------------
@@ -60,8 +56,6 @@ Behaviors access components from their client via ``requiresComponent()``:
      this->requiresComponent(vehicleStatus_);
      // Now vehicleCommand_ and vehicleStatus_ point to live components
    }
-
-|
 
 Example: CbArmPX4 (Async Behavior)
 ------------------------------------
@@ -174,8 +168,6 @@ Key patterns in this behavior:
 3. **Retry loop** — because this is async, the loop runs in its own thread and doesn't block the state machine.
 4. **``postSuccessEvent()`` / ``postFailureEvent()``** — posts ``EvCbSuccess`` or ``EvCbFailure`` to drive the transition.
 
-|
-
 Default Events
 --------------
 
@@ -193,8 +185,6 @@ Use them in transition tables:
      Transition<EvCbSuccess<CbArmPX4, OrPx4>, StTakeoff, SUCCESS>,
      Transition<EvCbFailure<CbArmPX4, OrPx4>, StError, ABORT>
      >reactions;
-
-|
 
 Core Client Behaviors Catalog
 ------------------------------
@@ -234,8 +224,6 @@ SMACC2 ships with reusable behaviors that work with any client:
 
 These are located in ``smacc2/include/smacc2/client_behaviors/``. See the :doc:`/how-to/how-to-core-client-behaviors` guide for usage details.
 
-|
-
 Summary
 -------
 
@@ -247,8 +235,6 @@ You learned:
 - How to connect to signals with ``createSignalConnection()``
 - How to post success/failure events from async behaviors
 - The core behavior catalog
-
-|
 
 Next Steps
 ----------

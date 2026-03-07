@@ -63,8 +63,6 @@ A test state machine follows the same structure as any SMACC2 state machine, but
      }
    };
 
-|
-
 Keyboard-Driven Manual Testing
 --------------------------------
 
@@ -84,8 +82,6 @@ With keyboard navigation you can:
 - Step through states manually (N = next, P = previous)
 - Trigger specific events (A, B, C keys in ``sm_three_some``)
 - Test error recovery by pressing keys that trigger failure transitions
-
-|
 
 Verifying Transitions via ROS 2 Topics
 ----------------------------------------
@@ -122,8 +118,6 @@ You can also write a ROS 2 test node that subscribes to the state machine status
        def status_callback(self, msg):
            self.states_visited.append(msg.current_state_name)
            self.get_logger().info(f'State: {msg.current_state_name}')
-
-|
 
 Testing Checklist
 ------------------

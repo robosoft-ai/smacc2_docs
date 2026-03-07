@@ -16,8 +16,6 @@ SMACC States
 - update()
 - onExit() -- Self explanatory
 
-|
-
 Transitions
 -----------
 
@@ -36,8 +34,6 @@ This table, was extremely popular and was adopted almost unchanged into other st
 In the boost.MPL library, only procedural state machines could be written, and the transition table was for the entire state machine.
 
 In SMACC we've adapted the Transition Table to the behavioral state machine (along with Boost Statechart) by including a transition table inside of every state.
-
-|
 
 Order of Function Calls
 -----------------------
@@ -74,8 +70,6 @@ From the state StOne, the order of the function calls would be...
 - CbOne -- onExit()
 - CbTwo -- onExit()
 - StOne -- onExit()
-
-|
 
 Naming Convention
 -----------------
@@ -118,8 +112,6 @@ And then classes have the following format...
 - Cp = component (ex: CpOdomTracker)
 - Ev = event (ex: EvNavigationSuccess)
 
-|
-
 State Machine Folder Structure
 ------------------------------
 
@@ -152,8 +144,6 @@ State Machine Folder Structure
 
 The ``include/sm_example/sm_example.hpp`` header is the main state machine definition, and ``src/sm_example/sm_example_node.cpp`` contains the ``main()`` entry point.
 
-|
-
 Client Library Folder Structure
 -------------------------------
 
@@ -185,8 +175,6 @@ Client Library Folder Structure
 
 The client library compiles into a shared library (``.so``) that state machines link against at build time.
 
-|
-
 Threading Model
 ---------------
 
@@ -195,8 +183,6 @@ Threading Model
 SMACC is built on the Boost StateChart library and consequently shares many similarities with that library.  The StateChart library provides synchronous and asynchronous threading models with which one can build a state machine. The synchronous model unsurprisingly creates synchronous state machines. Synchronous threads are simpler to understand and reason about, since they process input events as they come in. However, only one event can be processed at a time and if another event is triggered, the event currently being processed may be pre-empted and have its computation disrupted. This would lead to erratic behaviour. Robotics applications are typically very complex machines with many sensor inputs that need to be processed and control outputs that need to be generated.
 
 Asynchronous threads are substantially more complex to reason about and manage, but offer greater flexibility. Primarily for this reason, asynchronous threading is used in SMACC. Asynchronous threads are implemented with two main components: a scheduler and the processor. The scheduler receives events from external clients and stores them in a queue to be processed by the processor. Schedulers may feed the processor events based on some selection scheme, e.g. priority or a deadline. SMACC uses a FIFO (first in, first out) scheduler to process its events. When the scheduler's event queue is empty, the processor will idle until new events are fed.
-
-|
 
 Updateability
 -------------
