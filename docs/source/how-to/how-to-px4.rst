@@ -7,8 +7,8 @@ How to Use PX4 with SMACC2
 
 The ``cl_px4_mr`` client library integrates PX4 multirotor control with SMACC2 via the XRCE-DDS bridge. This guide covers the client, its 7 components, behaviors, and a complete example mission.
 
-Prerequisites
--------------
+Getting Started
+----------------
 
 1. **PX4 Autopilot** with SITL (Software-In-The-Loop) simulation:
 
