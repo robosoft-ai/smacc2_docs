@@ -13,6 +13,8 @@ Prerequisites
 - ROS 2 Jazzy installed and sourced (see :doc:`/getting-started`)
 - A colcon workspace (e.g. ``~/ros2_ws/``)
 
+|
+
 Build and Run sm_atomic
 -----------------------
 
@@ -36,6 +38,8 @@ Build and Run sm_atomic
    ros2 launch sm_atomic sm_atomic.py
 
 You should see log output showing the state machine cycling between **State1** and **State2**.
+
+|
 
 Project Structure
 -----------------
@@ -234,6 +238,8 @@ State 2
 
 State2 transitions back to State1 after 5 timer ticks, creating an infinite loop: **State1 → State2 → State1 → ...**
 
+|
+
 How It Works
 ------------
 
@@ -243,6 +249,8 @@ How It Works
 4. The transition table matches the event and the machine transitions to ``State2``.
 5. ``State1::onExit()`` runs, then ``State2::onEntry()`` runs.
 6. State2 configures its own ``CbTimerCountdownOnce(5)`` and the cycle repeats.
+
+|
 
 Observing with the SMACC RTA
 -----------------------------
@@ -258,6 +266,8 @@ You can also inspect state machine status from the command line:
 .. code-block:: bash
 
    ros2 topic echo /sm_atomic/smacc/status
+
+|
 
 Next Steps
 ----------

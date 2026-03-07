@@ -14,6 +14,8 @@ The `SMACC2 <https://github.com/robosoft-ai/SMACC2>`_ Repository for ROS2 can be
 
    https://github.com/robosoft-ai/SMACC2
 
+|
+
 SMACC Repo
 ------------
 

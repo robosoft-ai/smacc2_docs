@@ -34,6 +34,8 @@ Any code with access to the state machine can post a custom event:
 
    this->postEvent<EvFail>();
 
+|
+
 Typed Events
 ------------
 
@@ -59,6 +61,8 @@ You define your own typed events the same way:
    struct EvHttp : sc::event<EvHttp<TSource, TOrthogonal>> {};
 
 The event is then posted using ``onStateOrthogonalAllocation<>()`` which captures the type parameters at compile time (see :doc:`tutorial-3-orthogonals-concurrent-behaviors` for the ``CbHttpRequest`` example).
+
+|
 
 State Reactors
 --------------
@@ -143,6 +147,8 @@ Use ``static_createStateReactor<>()`` in ``staticConfigure()``:
 
 The reactor is **state-scoped** — it is created when the state is entered and destroyed when the state exits.
 
+|
+
 Summary
 -------
 
@@ -153,6 +159,8 @@ You learned:
 - State reactors that combine multiple events into complex transition logic
 - ``SrAllEventsGo``, ``SrConditional``, and ``SrEventCountdown``
 - ``static_createStateReactor<>()`` for declaring reactors in ``staticConfigure()``
+
+|
 
 Next Steps
 ----------

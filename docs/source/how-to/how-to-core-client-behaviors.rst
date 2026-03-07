@@ -28,6 +28,8 @@ Chains multiple behaviors to run sequentially within a single state. Each behavi
 
 The sequence posts ``EvCbSuccess`` when the last behavior in the chain completes.
 
+|
+
 CbSleepFor
 -----------
 
@@ -43,6 +45,8 @@ Async sleep for a specified duration, then posts success.
    {
      configure_orthogonal<OrTimer, CbSleepFor>(rclcpp::Duration(5, 0));  // 5 seconds
    }
+
+|
 
 CbCallService
 --------------
@@ -76,6 +80,8 @@ Override ``onServiceResponse()`` for custom response handling:
      }
    };
 
+|
+
 CbWaitTopicMessage
 -------------------
 
@@ -102,6 +108,8 @@ Waits for the first message on a topic, with an optional guard predicate.
          });
    }
 
+|
+
 CbWaitTopic
 ------------
 
@@ -117,6 +125,8 @@ Waits for a topic to appear in the ROS 2 graph. Posts success when the topic exi
    {
      configure_orthogonal<OrSensor, CbWaitTopic>("/scan");
    }
+
+|
 
 CbWaitActionServer
 -------------------
@@ -134,6 +144,8 @@ Waits for an action server to become available, with a timeout.
      configure_orthogonal<OrNavigation, CbWaitActionServer>(
        std::chrono::seconds(30));
    }
+
+|
 
 CbSubscriptionCallbackBase
 ----------------------------
@@ -154,6 +166,8 @@ Base class for subscription-driven behaviors. Override ``onMessageReceived()`` i
        // Process each message
      }
    };
+
+|
 
 CbServiceServerCallbackBase
 -----------------------------
@@ -177,6 +191,8 @@ Base class for service server behaviors. Override ``onServiceRequestReceived()``
      }
    };
 
+|
+
 CbRosLaunch
 ------------
 
@@ -198,6 +214,8 @@ Launches a ROS 2 package with configurable lifetime mode.
      configure_orthogonal<OrLaunch, CbRosLaunch>(
        "my_package", "my_launch.py", RosLaunchMode::CLIENT_BEHAVIOR_LIFETIME);
    }
+
+|
 
 CbWaitNode
 -----------

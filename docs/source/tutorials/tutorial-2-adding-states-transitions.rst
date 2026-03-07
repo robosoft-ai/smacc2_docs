@@ -12,6 +12,8 @@ Starting Point
 
 You should have a working ``sm_atomic`` build from :doc:`tutorial-1-first-state-machine`.
 
+|
+
 Step 1 — Add a Third State
 ---------------------------
 
@@ -51,6 +53,8 @@ Create the file ``include/sm_atomic/states/st_state_3.hpp``:
    };
    }  // namespace sm_atomic
 
+|
+
 Step 2 — Forward-Declare and Include
 -------------------------------------
 
@@ -69,6 +73,8 @@ In ``sm_atomic.hpp``, add the forward declaration and include:
    #include "states/st_state_1.hpp"
    #include "states/st_state_2.hpp"
    #include "states/st_state_3.hpp"  // NEW
+
+|
 
 Step 3 — Wire the Three-State Cycle
 ------------------------------------
@@ -99,6 +105,8 @@ Rebuild and test:
 
 You should see the machine cycling through all three states.
 
+|
+
 Custom Transition Tags
 ----------------------
 
@@ -114,6 +122,8 @@ Define custom tags as structs that inherit from a default tag:
    struct PREVIOUS : ABORT {};
 
 These tags appear in the SMACC RTA viewer and in log output, making it easy to understand *why* a transition occurred.
+
+|
 
 Multiple Transitions in One State
 ----------------------------------
@@ -139,6 +149,8 @@ Key observations:
 - Custom tags (``TIMEOUT``, ``NEXT``, ``PREVIOUS``) communicate intent to the RTA viewer.
 - You can transition to states at different levels of the hierarchy (``SS1::Ss1`` is a superstate, ``MsRecover`` is a mode state).
 
+|
+
 Summary
 -------
 
@@ -148,6 +160,8 @@ You learned how to:
 - Wire multi-state transition cycles
 - Define and use custom transition tags
 - Configure multiple transitions in a single ``mpl::list``
+
+|
 
 Next Steps
 ----------

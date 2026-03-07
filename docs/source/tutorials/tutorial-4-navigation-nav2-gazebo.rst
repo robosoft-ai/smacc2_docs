@@ -18,6 +18,8 @@ Prerequisites
 
 - SMACC2 cloned in your colcon workspace
 
+|
+
 Build
 -----
 
@@ -27,6 +29,8 @@ Build
    cd ~/ros2_ws
    colcon build --packages-select sm_nav2_gazebo_test_1
    source install/setup.bash
+
+|
 
 Run
 ---
@@ -46,6 +50,8 @@ In a second terminal, launch the state machine:
    ros2 launch sm_nav2_gazebo_test_1 sm_nav2_gazebo_test_1.py
 
 The robot will localize, navigate to two waypoints, rotate, and stop.
+
+|
 
 State Machine Overview
 -----------------------
@@ -162,6 +168,8 @@ Rotating in Place
 
 ``CbPureSpinning`` uses a custom local planner to rotate the robot 180 degrees at 0.5 rad/s.
 
+|
+
 Modifying Waypoints
 -------------------
 
@@ -181,6 +189,8 @@ Rebuild and relaunch:
    source install/setup.bash
    ros2 launch sm_nav2_gazebo_test_1 sm_nav2_gazebo_test_1.py
 
+|
+
 Action Events
 --------------
 
@@ -193,6 +203,8 @@ SMACC2 automatically generates events from ROS 2 action clients:
 
 These events are parameterized by the **client type** and **orthogonal type**, so transitions are unambiguous even when multiple action clients are in use.
 
+|
+
 Summary
 -------
 
@@ -202,6 +214,8 @@ You learned:
 - How to configure waypoints with ``CbNavigateGlobalPosition``
 - How action events (``EvActionSucceeded``, ``EvActionAborted``) drive transitions
 - How to modify waypoints and rebuild
+
+|
 
 Next Steps
 ----------

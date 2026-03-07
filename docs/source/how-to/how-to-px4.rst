@@ -32,6 +32,8 @@ Prerequisites
 
 4. **cl_px4_mr** and ``px4_msgs`` built in your colcon workspace
 
+|
+
 Overview
 --------
 
@@ -50,6 +52,8 @@ Overview
      this->createComponent<CpVehicleCommandAck, TOrthogonal, TClient>();
      this->createComponent<CpGoalChecker, TOrthogonal, TClient>();
    }
+
+|
 
 Components
 ----------
@@ -82,6 +86,8 @@ Components
      - Receive command acknowledgments
      - ``getLastAckCommand()`` / Signal: ``onAckReceived_``
 
+|
+
 Behaviors
 ---------
 
@@ -112,6 +118,8 @@ Behaviors
 
 All behaviors post ``EvCbSuccess`` on completion and ``EvCbFailure`` on error.
 
+|
+
 Orthogonal Setup
 -----------------
 
@@ -125,6 +133,8 @@ Orthogonal Setup
        this->createClient<cl_px4_mr::ClPx4Mr>();
      }
    };
+
+|
 
 Example Mission Flow
 ---------------------
@@ -162,6 +172,8 @@ Example state:
      }
    };
 
+|
+
 Build and Run
 --------------
 
@@ -180,6 +192,8 @@ Build and Run
 
    # Terminal 3: State Machine
    ros2 launch sm_cl_px4_mr_test_1 sm_cl_px4_mr_test_1.py
+
+|
 
 NED Coordinate System
 ----------------------

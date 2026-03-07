@@ -18,6 +18,8 @@ Overview
 
 Reference state machine: ``sm_panda_cl_moveit2z_cb_inventory``
 
+|
+
 Orthogonal Setup
 -----------------
 
@@ -33,6 +35,8 @@ Orthogonal Setup
    };
 
 The constructor argument is the MoveIt2 planning group name (e.g., ``"panda_arm"``).
+
+|
 
 Components
 ----------
@@ -56,6 +60,8 @@ Components
      - Transform listener for coordinate conversions
    * - ``CpGraspingObjects``
      - Manages collision objects for pick-and-place
+
+|
 
 Behaviors
 ---------
@@ -97,6 +103,8 @@ Behaviors
      - Async
      - Reverse the last executed trajectory
 
+|
+
 Events
 ------
 
@@ -107,6 +115,8 @@ Standard async behavior events also apply:
 
 - ``EvCbSuccess<CbBehavior, OrManipulation>``
 - ``EvCbFailure<CbBehavior, OrManipulation>``
+
+|
 
 Example State
 --------------
@@ -129,6 +139,8 @@ Example State
        configure_orthogonal<OrManipulation, CbMoveKnownState>("home");
      }
    };
+
+|
 
 SOFT Requirement Pattern
 -------------------------

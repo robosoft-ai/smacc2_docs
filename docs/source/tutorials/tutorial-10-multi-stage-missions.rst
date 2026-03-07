@@ -56,6 +56,8 @@ Mode State Transitions
 
 When ``SequenceD`` inside ``MsMode1`` finishes its loop iterations, it posts ``EvLoopEnd<SequenceD>``. The mode state catches this and transitions to ``MsMode2``.
 
+|
+
 sm_cl_px4_mr_test_1: Real-World Mission
 -----------------------------------------
 
@@ -193,6 +195,8 @@ Sometimes a behavior needs data from a component on a **different** orthogonal. 
      otherClient->requiresComponent(comp);
    }
 
+|
+
 Designing Your Own Multi-Stage Mission
 ---------------------------------------
 
@@ -204,6 +208,8 @@ When designing a complex mission:
 4. **Define recovery strategies** — use mode states with deep history transitions
 5. **Assign orthogonals** — one per independent concern (navigation, manipulation, monitoring, etc.)
 
+|
+
 Summary
 -------
 
@@ -214,6 +220,8 @@ You learned:
 - The complete signal wiring chain from state configuration to event-driven transition
 - Cross-orthogonal component access
 - Design principles for multi-stage missions
+
+|
 
 Further Reading
 ---------------
