@@ -12,7 +12,7 @@ SMACC2: State Machine Asynchronous C++ for ROS2 Applications
     <h1 align="left">
       <div>
         <div style="position: relative; padding-left: 6%; padding-bottom: 0%; overflow: hidden; max-width: 100%; height: auto;">
-          <iframe width="450" height="300" src="https://www.youtube.com/embed/cLhXwG6xIyM?autoplay=1&mute=1" frameborder="1" allowfullscreen></iframe>
+          <iframe width="650" height="433" src="https://www.youtube.com/embed/cLhXwG6xIyM?autoplay=1&mute=1" frameborder="1" allowfullscreen></iframe>
         </div>
       </div>
     </h1>
