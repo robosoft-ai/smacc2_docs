@@ -157,4 +157,4 @@ You learned:
 Next Steps
 ----------
 
-In :doc:`tutorial-9-super-states` you will learn how to group states into hierarchical super states with loop control.
+In :doc:`tutorial-9-hierarchical-states` you will learn how to group states into hierarchical states with mode states, super states, and loop control.

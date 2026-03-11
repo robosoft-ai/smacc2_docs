@@ -1,9 +1,9 @@
-.. title:: Tutorial 9 — Super States
+.. title:: Tutorial 9 — Hierarchical States
 .. meta::
    :description: Use SMACC2 mode states and super states for hierarchical state grouping, inner state loops, and recovery modes.
 
-Tutorial 9 — Super States
-==========================
+Tutorial 9 — Hierarchical States
+==================================
 
 Real-world state machines quickly outgrow a flat list of states. SMACC2 supports **hierarchical state grouping** through mode states and super states, as demonstrated in the ``sm_three_some`` reference state machine. In this tutorial you will learn how to create mode states, super states with inner states, and loop patterns.
 

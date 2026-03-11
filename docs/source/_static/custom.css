@@ -82,3 +82,8 @@ h1 {
   margin-bottom: 24px;
   margin-top: 48px;
 }
+
+.rst-content iframe {
+  width: 650px;
+  height: 433px;
+}

@@ -36,5 +36,5 @@ Advanced
 .. toctree::
    :maxdepth: 1
 
-   tutorial-9-super-states
+   tutorial-9-hierarchical-states
    tutorial-10-multi-stage-missions
