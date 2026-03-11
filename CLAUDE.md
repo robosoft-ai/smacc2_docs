@@ -66,6 +66,30 @@ citations
 - **`concepts/hsm-architecture.rst`** — hierarchical states, mode states, super states, inner state loops, deep history, state-local storage
 - **`concepts/substate-architecture.rst`** — object lifetimes, orthogonals, events, clients, client behaviors, components, component-based architecture, state reactors
 
+## How-To Page Heading Structure
+
+All how-to pages for client libraries follow a standard three-section structure:
+
+```
+How to Use [X] with SMACC2             (= heading)
+├── Getting Started                     (- heading)
+│   ├── Required Installations          (~ heading)
+│   ├── Assembling the Workspace        (~ heading)
+│   ├── Building the Workspace          (~ heading)
+│   └── Launching the Application       (~ heading)
+├── Tour of the [X] Client Behavior Library  (- heading)
+│   ├── Folder Structure                (~ heading)
+│   ├── Components                      (~ heading)
+│   └── Behaviors                       (~ heading)
+└── Using the [X] Client Behavior Library    (- heading)
+    ├── Configuring the Orthogonal      (~ heading)
+    ├── Using a Behavior                (~ heading)
+    ├── Writing Your Own Behavior       (~ heading)
+    └── Writing Your Own Component      (~ heading)
+```
+
+Additional library-specific subsections (e.g., Planner Presets, SOFT Requirement Pattern) may be added under the appropriate parent section.
+
 ## RST Conventions
 
 - Every page has `.. title::` and `.. meta:: :description:` directives for SEO
