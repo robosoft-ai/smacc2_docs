@@ -84,6 +84,6 @@ h1 {
 }
 
 .rst-content iframe {
-  width: 650px;
-  height: 433px;
+  width: 650px !important;
+  height: 433px !important;
 }
