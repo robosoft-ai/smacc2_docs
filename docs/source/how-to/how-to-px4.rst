@@ -64,7 +64,8 @@ The packages you need are:
 - ``smacc2`` — core state machine framework
 - ``smacc2_msgs`` — SMACC2 message definitions
 - ``cl_px4_mr`` — PX4 multirotor client library (inside ``SMACC2/smacc2_client_library/``)
-- ``sm_cl_px4_mr_test_1`` — reference state machine (inside ``SMACC2/smacc2_sm_reference_library/``)
+- ``sm_cl_px4_mr_test_1`` — reference state machine: basic flight (inside ``SMACC2/smacc2_sm_reference_library/``)
+- ``sm_cl_px4_mr_test_2`` — reference state machine: extended behaviors (inside ``SMACC2/smacc2_sm_reference_library/``)
 - ``px4_msgs`` — PX4 ROS 2 message definitions
 
 Building the Workspace
@@ -122,6 +123,14 @@ The state machine executes this mission automatically:
 
    Wait(5s) → Arm → Takeoff(5m) → GoTo(10,0,-5) → Orbit(3 loops) → Return(0,0,-5) → Land
 
+A second test state machine, ``sm_cl_px4_mr_test_2``, exercises the extended
+behaviors (hold position, yaw rotate, change altitude, spiral pattern, follow
+waypoints, figure-eight, return to home):
+
+.. code-block:: bash
+
+   ros2 launch sm_cl_px4_mr_test_2 sm_cl_px4_mr_test_2.launch.py
+
 Monitor with:
 
 .. code-block:: bash
@@ -142,7 +151,7 @@ Tour of the PX4 Client Behavior Library
 The ``cl_px4_mr`` client library provides SMACC2 integration for PX4
 multirotor control via the XRCE-DDS bridge. It follows a pure
 component-based architecture where the client orchestrates seven
-specialized components and six flight behaviors.
+specialized components and thirteen flight behaviors.
 
 For the full API reference, see the
 `cl_px4_mr README <https://github.com/robosoft-ai/SMACC2/tree/jazzy/smacc2_client_library/cl_px4_mr>`_.
@@ -157,11 +166,18 @@ Folder Structure
    │   ├── cl_px4_mr.hpp                        # Client (orchestrator)
    │   ├── client_behaviors/
    │   │   ├── cb_arm_px4.hpp
+   │   │   ├── cb_change_altitude.hpp
    │   │   ├── cb_disarm_px4.hpp
-   │   │   ├── cb_takeoff.hpp
-   │   │   ├── cb_land.hpp
+   │   │   ├── cb_figure_eight.hpp
+   │   │   ├── cb_follow_waypoints.hpp
    │   │   ├── cb_go_to_location.hpp
-   │   │   └── cb_orbit_location.hpp
+   │   │   ├── cb_hold_position.hpp
+   │   │   ├── cb_land.hpp
+   │   │   ├── cb_orbit_location.hpp
+   │   │   ├── cb_return_to_home.hpp
+   │   │   ├── cb_spiral_pattern.hpp
+   │   │   ├── cb_takeoff.hpp
+   │   │   └── cb_yaw_rotate.hpp
    │   └── components/
    │       ├── cp_vehicle_command.hpp
    │       ├── cp_vehicle_status.hpp
@@ -258,6 +274,27 @@ All behaviors inherit from ``SmaccAsyncClientBehavior`` and post
    * - ``CbOrbitLocation``
      - ``centerX``, ``centerY``, ``altitude``, ``radius`` (5.0), ``angularVelocity`` (0.5), ``numOrbits`` (3)
      - Orbits a point using ``ISmaccUpdatable::update()``
+   * - ``CbHoldPosition``
+     - ``durationSeconds`` (default 5.0)
+     - Holds current position for specified duration
+   * - ``CbYawRotate``
+     - ``targetYawRad``, ``relative`` (default false)
+     - Rotates in place to a target heading (absolute or relative)
+   * - ``CbChangeAltitude``
+     - ``targetAltitude`` (positive meters above ground)
+     - Ascends or descends while maintaining XY position
+   * - ``CbFollowWaypoints``
+     - ``waypoints`` (vector of {x,y,z,yaw}), ``xyTol`` (0.5), ``zTol`` (0.3)
+     - Visits a sequence of NED waypoints in order
+   * - ``CbFigureEight``
+     - ``centerX``, ``centerY``, ``altitude``, ``size`` (5.0), ``speed`` (0.5), ``numLoops`` (1)
+     - Flies a lemniscate figure-8 pattern
+   * - ``CbReturnToHome``
+     - ``homeX``, ``homeY``, ``homeZ``, ``homeYaw``
+     - Returns to a specified home position
+   * - ``CbSpiralPattern``
+     - ``centerX``, ``centerY``, ``altitude``, ``maxRadius`` (20.0), ``spacing`` (3.0), ``speed`` (2.0)
+     - Flies an expanding Archimedean spiral (search and rescue)
 
 Using the PX4 Client Behavior Library
 ---------------------------------------
@@ -338,6 +375,31 @@ and its parameters:
 
    // Land
    configure_orthogonal<OrPx4, CbLand>();
+
+   // Hold current position for 3 seconds
+   configure_orthogonal<OrPx4, CbHoldPosition>(3.0f);
+
+   // Rotate 90 degrees relative to current heading
+   configure_orthogonal<OrPx4, CbYawRotate>(static_cast<float>(M_PI / 2.0), true);
+
+   // Change altitude to 20 meters
+   configure_orthogonal<OrPx4, CbChangeAltitude>(20.0f);
+
+   // Follow 3 waypoints (NED coordinates, yaw=NAN maintains heading)
+   configure_orthogonal<OrPx4, CbFollowWaypoints>(
+     std::vector<std::array<float, 4>>{
+       {10.0f, 0.0f, -20.0f, NAN},
+       {10.0f, 10.0f, -20.0f, NAN},
+       {0.0f, 10.0f, -20.0f, NAN}});
+
+   // Figure-8: centerX, centerY, altitude, size, speed, numLoops
+   configure_orthogonal<OrPx4, CbFigureEight>(5.0f, 5.0f, 20.0f, 5.0f, 0.5f, 3);
+
+   // Return to home position (NED coordinates)
+   configure_orthogonal<OrPx4, CbReturnToHome>(0.0f, 0.0f, -15.0f, 0.0f);
+
+   // Spiral search pattern: center, altitude, maxRadius, spacing, speed
+   configure_orthogonal<OrPx4, CbSpiralPattern>(0.0f, 0.0f, 20.0f, 15.0f, 3.0f, 2.0f);
 
 Writing Your Own Behavior
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
