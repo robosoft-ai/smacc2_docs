@@ -152,7 +152,7 @@ Components can depend on sibling components within the same client:
 This is safe because ``onInitialize()`` is called after all components are created by the client's ``onComponentInitialization()``.
 
 Global Component Access from Behaviors
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+---------------------------------------
 
 ``requiresComponent()`` is also available to client behaviors. While the typical use is a behavior accessing a component on its own client, the search is actually global — it spans **all clients across all orthogonals**. A behavior on ``OrKeyboard`` can reach a component owned by ``OrData``.
 

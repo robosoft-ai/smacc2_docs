@@ -153,7 +153,7 @@ Inner states access their super state's data through ``this->context<Ss1>()``:
 This returns a reference to the live super state instance, so you can read and write its member variables.
 
 Accessing Super State Context from Client Behaviors
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+----------------------------------------------------
 
 ``this->context<Ss>()`` is a Boost Statechart method available only inside **state** classes. Client behaviors need a different approach — navigate up the hierarchy via ``getParentState()``:
 
