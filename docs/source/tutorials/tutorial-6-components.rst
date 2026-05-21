@@ -151,6 +151,24 @@ Components can depend on sibling components within the same client:
 
 This is safe because ``onInitialize()`` is called after all components are created by the client's ``onComponentInitialization()``.
 
+Global Component Access from Behaviors
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+``requiresComponent()`` is also available to client behaviors. While the typical use is a behavior accessing a component on its own client, the search is actually global — it spans **all clients across all orthogonals**. A behavior on ``OrKeyboard`` can reach a component owned by ``OrData``.
+
+.. code-block:: c++
+
+   void onEntry() override
+   {
+     CpMissionData * missionData_ = nullptr;
+     this->requiresComponent(missionData_);
+     // missionData_ now points to the component regardless of which
+     // orthogonal or client owns it
+     missionData_->initialPosition = Position2D{1.0, 2.0};
+   }
+
+The ``sm_data_sharing_1`` reference state machine demonstrates this end-to-end: a local ``ClData`` client in ``OrData`` hosts ``CpMissionData``, and behaviors in all three states access it via ``requiresComponent()`` regardless of which orthogonal they belong to. See the `source code <https://github.com/robosoft-ai/SMACC2/tree/jazzy/smacc2_sm_reference_library/sm_data_sharing_1>`__.
+
 SmaccSignal: Declaring and Connecting
 --------------------------------------
 

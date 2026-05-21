@@ -152,6 +152,24 @@ Inner states access their super state's data through ``this->context<Ss1>()``:
 
 This returns a reference to the live super state instance, so you can read and write its member variables.
 
+Accessing Super State Context from Client Behaviors
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+``this->context<Ss>()`` is a Boost Statechart method available only inside **state** classes. Client behaviors need a different approach — navigate up the hierarchy via ``getParentState()``:
+
+.. code-block:: c++
+
+   void onEntry() override
+   {
+     auto * ss = dynamic_cast<SsMission *>(
+       this->getCurrentState()->getParentState());
+     ss->initialPosition = Position2D{1.0, 2.0};
+   }
+
+``getCurrentState()`` returns the active leaf state as ``ISmaccState *``, and ``getParentState()`` returns its parent — the live superstate instance. The ``dynamic_cast`` recovers the concrete type so you can access its members.
+
+The ``sm_data_sharing_2`` reference state machine demonstrates this pattern end-to-end: ``SsMission`` holds ``initialPosition`` and ``targetPosition`` fields, and three client behaviors (``CbStoreData1``, ``CbStoreData2``, ``CbProcessData``) read and write them across state transitions using ``getParentState()``. See the `source code <https://github.com/robosoft-ai/SMACC2/tree/jazzy/smacc2_sm_reference_library/sm_data_sharing_2>`__.
+
 Hierarchy Overview
 ------------------
 
