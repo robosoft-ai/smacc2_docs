@@ -43,7 +43,7 @@ Async behaviors have additional capabilities:
 Accessing Components
 --------------------
 
-Behaviors access components from their client via ``requiresComponent()``:
+Behaviors access components via ``requiresComponent()``:
 
 .. code-block:: c++
 
@@ -56,6 +56,8 @@ Behaviors access components from their client via ``requiresComponent()``:
      this->requiresComponent(vehicleStatus_);
      // Now vehicleCommand_ and vehicleStatus_ point to live components
    }
+
+``requiresComponent()`` searches **all clients across all orthogonals** — a behavior does not need to be on the same client that owns the component. This global lookup enables clean data-sharing architectures where a component on one orthogonal acts as the single source of truth for the whole machine. See :doc:`tutorial-6-components` for a full example.
 
 Example: CbArmPX4 (Async Behavior)
 ------------------------------------
