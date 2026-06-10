@@ -40,7 +40,7 @@ Create the file ``include/sm_atomic/states/st_state_3.hpp``:
 
      static void staticConfigure()
      {
-       configure_orthogonal<OrTimer, CbTimerCountdownOnce>(5);
+       configure_orthogonal<OrTimer, CbTimerCountdownOnce>(5s);
      }
 
      void runtimeConfigure() {}

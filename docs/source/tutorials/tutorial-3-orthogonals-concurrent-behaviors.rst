@@ -108,7 +108,7 @@ State 1 — Timer Countdown
          reactions;
 
      static void staticConfigure() {
-       configure_orthogonal<OrTimer, CbTimerCountdownOnce>(5);
+       configure_orthogonal<OrTimer, CbTimerCountdownOnce>(5s);
      }
 
      void runtimeConfigure() {}
@@ -210,7 +210,7 @@ You can assign behaviors to multiple orthogonals in the same ``staticConfigure()
 .. code-block:: c++
 
    static void staticConfigure() {
-     configure_orthogonal<OrTimer, CbTimerCountdownOnce>(5);
+     configure_orthogonal<OrTimer, CbTimerCountdownOnce>(5s);
      configure_orthogonal<OrHttp, CbHttpRequest>();
    }
 

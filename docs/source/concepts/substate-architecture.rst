@@ -26,6 +26,15 @@ SMACC2 runtime objects fall into two categories based on their lifetime:
 
 Understanding this distinction is essential. Because client behaviors are state-scoped, they are the right place for state-specific logic. Because clients and components are state machine-scoped, they are the right place for persistent connections, shared data, and hardware interfaces that must survive state transitions.
 
+**Container State Scope**
+
+State-scoped objects are tied to a specific state in the hierarchy, which may be a leaf state or a **container state** (a superstate or mode state). A ``Cb``, ``Sr``, or ``Eg`` defined in a container state is created when that container state enters and destroyed only when it exits — surviving every inner transition between that container state's children.
+
+This enables two important patterns:
+
+- **State reactor in a container state** — the reactor accumulates event counts across inner state cycles without being reset by inner transitions. Use this for retry logic, threshold detection, or any scenario where events must be tallied across multiple inner state cycles. See ``sm_retry_logic_1``.
+- **Client behavior in a container state** — a single persistent behavior instance that generates events consumed by any inner state. Because only one instance exists, each external signal (a keypress, a timer tick) posts exactly one event — avoiding the double-event problem that arises when the same behavior class is instantiated in multiple simultaneously active states. See ``sm_mode_state_behavior_1``.
+
 Intro to Substate Objects
 -------------------------
 
@@ -84,7 +93,7 @@ Here is the code for the example image above...
        configure_orthogonal<OrObstaclePerception, CbLidarSensor>();
        configure_orthogonal<OrStringPublisher, CbStringPublisher>("Hello World!");
        configure_orthogonal<OrNavigation, CbAbsoluteRotate>(360);
-       configure_orthogonal<OrTimer, CbTimerCountdownOnce>(10);
+       configure_orthogonal<OrTimer, CbTimerCountdownOnce>(10s);
 
        // Create State Reactor
        static_createStateReactor<
@@ -556,3 +565,5 @@ State Reactions accept events as an input, and output events. They are scoped to
     :align: center
 
 This is in contrast to states, which also accept events as input, but then output transitions and parameter changes (important for State Machine determinism).
+
+State reactors are most commonly placed in leaf states, but they can also be placed in **container states** (superstates and mode states). A reactor defined at the container state level is created once when that container state enters and persists through all inner state transitions — it is not reset by transitions between the container's children. This makes container-level reactors the correct pattern for retry logic, threshold counting, or any scenario where events must be tallied across multiple inner state cycles. See :doc:`/concepts/hsm-architecture` for details on the container state hierarchy and ``sm_retry_logic_1`` for a working example.
