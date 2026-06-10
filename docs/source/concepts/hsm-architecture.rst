@@ -16,7 +16,7 @@ Let's talk about SMACC support for hierarchical states...
 
 We need to make a distinction between parent states & leaf states. Leaf states being defined as those states that do not have any child states. In the example above, StState1, StState2, StiState1, StiState2 and StiState3 are leaf states.
 
-As can be seen in the image above, only leaf states should have orthogonals. The reason for this being that only the leaf states interact with the hardware interface, where the higher level parent states such as superstates and modestates, define sequences of states, looping of states, parameter changes, etc.
+The higher-level parent states — superstates and mode states — are collectively referred to as **container states**. Container states define sequences, loops, operational phases, and parameter changes. Leaf states are typically where hardware-interface behaviors live, but container states can also own client behaviors and state reactors when those objects need to persist across inner state transitions. See :doc:`/concepts/substate-architecture` for details on the container state patterns.
 
 SMACC2 provides three levels of hierarchy above leaf states:
 

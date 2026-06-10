@@ -142,13 +142,13 @@ The Orthogonal
    public:
      void onInitialize() override
      {
-       auto client = this->createClient<cl_ros2_timer::ClRos2Timer>(1s);
+       this->createClient<cl_ros2_timer::ClRos2Timer>();
      }
    };
    }  // namespace sm_atomic
 
 - ``Orthogonal<OrTimer>`` uses CRTP to identify the orthogonal type at compile time.
-- ``createClient<ClRos2Timer>(1s)`` creates a timer client that ticks every 1 second. The client lives as long as the state machine.
+- ``createClient<ClRos2Timer>()`` creates the timer client. The client lives as long as the state machine.
 
 State 1
 ~~~~~~~
@@ -177,8 +177,8 @@ State 1
      // STATE FUNCTIONS
      static void staticConfigure()
      {
-       configure_orthogonal<OrTimer, CbTimerCountdownLoop>(3);
-       configure_orthogonal<OrTimer, CbTimerCountdownOnce>(5);
+       configure_orthogonal<OrTimer, CbTimerCountdownLoop>(3s);
+       configure_orthogonal<OrTimer, CbTimerCountdownOnce>(5s);
      }
 
      void runtimeConfigure() {}
@@ -193,7 +193,7 @@ Walking through each piece:
 
 - ``SmaccState<State1, SmAtomic>`` — first param is the state (CRTP), second is the parent (the state machine).
 - **Transition table** — ``mpl::list`` of ``Transition<Event, TargetState, Tag>``. When ``EvTimer`` fires from ``CbTimerCountdownOnce`` on ``OrTimer``, the machine transitions to ``State2`` tagged ``SUCCESS``.
-- ``staticConfigure()`` — called once at compile-time registration. It assigns **client behaviors** to orthogonals. Here, two behaviors run concurrently on ``OrTimer``: a countdown loop (fires every 3 ticks) and a countdown once (fires after 5 ticks).
+- ``staticConfigure()`` — called once at compile-time registration. It assigns **client behaviors** to orthogonals. Here, two behaviors run concurrently on ``OrTimer``: a countdown loop (fires every 3 seconds) and a countdown once (fires after 5 seconds).
 - ``onEntry()`` / ``onExit()`` — called when the state is entered or exited.
 
 State 2
@@ -221,7 +221,7 @@ State 2
 
      static void staticConfigure()
      {
-       configure_orthogonal<OrTimer, CbTimerCountdownOnce>(5);
+       configure_orthogonal<OrTimer, CbTimerCountdownOnce>(5s);
      }
 
      void runtimeConfigure() { RCLCPP_INFO(getLogger(), "Entering State2"); }
@@ -238,11 +238,11 @@ How It Works
 ------------
 
 1. ``smacc2::run<SmAtomic>()`` creates the state machine and calls ``onInitialize()``, which creates ``OrTimer``.
-2. The machine enters ``State1``. ``staticConfigure()`` attaches ``CbTimerCountdownLoop(3)`` and ``CbTimerCountdownOnce(5)`` to ``OrTimer``.
-3. The timer client ticks every 1 second. After 5 ticks, ``CbTimerCountdownOnce`` fires ``EvTimer``.
+2. The machine enters ``State1``. ``staticConfigure()`` attaches ``CbTimerCountdownLoop(3s)`` and ``CbTimerCountdownOnce(5s)`` to ``OrTimer``.
+3. After 5 seconds, ``CbTimerCountdownOnce`` fires ``EvTimer``.
 4. The transition table matches the event and the machine transitions to ``State2``.
 5. ``State1::onExit()`` runs, then ``State2::onEntry()`` runs.
-6. State2 configures its own ``CbTimerCountdownOnce(5)`` and the cycle repeats.
+6. State2 configures its own ``CbTimerCountdownOnce(5s)`` and the cycle repeats.
 
 Observing with the SMACC RTA
 -----------------------------

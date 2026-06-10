@@ -87,7 +87,7 @@ SrAllEventsGo
 
      static void staticConfigure()
      {
-       configure_orthogonal<OrTimer, CbTimerCountdownOnce>(10);
+       configure_orthogonal<OrTimer, CbTimerCountdownOnce>(10s);
        configure_orthogonal<OrSubscriber, CbWatchdogSubscriberBehavior>();
        configure_orthogonal<OrKeyboard, CbDefaultKeyboardBehavior>();
 
