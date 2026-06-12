@@ -105,10 +105,10 @@ Some older SMACC2 clients (like ``ClMoveit2z``) put business logic directly in t
      std::shared_ptr<moveit::planning_interface::PlanningSceneInterface>
        planningSceneInterface;
 
-     smacc2::SmaccSignal<void()> onSucceded_;
+     smacc2::SmaccSignal<void()> onSucceeded_;
      smacc2::SmaccSignal<void()> onFailed_;
 
-     void postEventMotionExecutionSucceded();
+     void postEventMotionExecutionSucceeded();
      void postEventMotionExecutionFailed();
    };
 
