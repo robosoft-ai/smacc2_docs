@@ -293,6 +293,39 @@ Rotation Behaviors
      - spiral search parameters
      - Spiral search pattern
 
+Behavior Server Primitives
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+These behaviors wrap the Nav2 behavior server's recovery/primitive actions
+(``/spin``, ``/backup``, ``/drive_on_heading``). Unlike the navigation
+behaviors above, they do not use the planner/controller pipeline: motion is
+odometry-relative and collision-checked by projecting the footprint ahead
+through the local costmap. Each is a thin wrapper over the core
+``CbActionClientBehaviorBase<TAction>`` template, so the state machine's
+orthogonal must create the matching action client component, e.g.
+``createComponent<CpActionClient<nav2_msgs::action::Spin>>("/spin")``.
+
+.. list-table::
+   :header-rows: 1
+
+   * - Behavior
+     - Constructor Parameters
+     - Description
+   * - ``CbSpin``
+     - ``targetYaw`` (float, rad, relative), optional ``timeAllowance``
+     - Spin in place by a relative angle, collision-checked
+   * - ``CbBackUp``
+     - ``distance`` (float, m), optional ``speed``, ``timeAllowance``
+     - Back up a distance along the current heading, collision-checked
+   * - ``CbDriveOnHeading``
+     - ``distance`` (float, m), optional ``speed``, ``timeAllowance``
+     - Drive forward on the current heading, collision-checked; aborts
+       (``EvCbFailure``) if an obstacle blocks the path
+
+See ``sm_nav2_gazebo_test_3`` in the reference library for a mission built
+from these primitives, including an intentional collision abort handled
+through ``EvCbFailure``.
+
 Monitoring Behaviors
 ^^^^^^^^^^^^^^^^^^^^^
 
