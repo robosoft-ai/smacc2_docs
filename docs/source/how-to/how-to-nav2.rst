@@ -262,8 +262,8 @@ Navigation Behaviors
      - optional ``NavigateNextWaypointOptions``
      - Navigate to the next waypoint in sequence
    * - ``CbUndoPathBackwards``
-     - (none)
-     - Retrace recorded odometry path in reverse
+     - optional ``CbUndoPathBackwardsOptions``
+     - Retrace recorded odometry path in reverse (see `Undo Navigation`_)
    * - ``CbAbortNavigation``
      - (none)
      - Cancel current navigation goal (sync)
@@ -454,6 +454,84 @@ Planner Presets
      - Retracing recorded odometry paths
    * - ``setDefaultPlanners()``
      - Restore original planner configuration
+
+Undo Navigation
+~~~~~~~~~~~~~~~
+
+``CbUndoPathBackwards`` makes the robot retrace, exactly backwards, the path it
+recorded during a previous forward navigation. The pipeline has three parts:
+``CpOdomTracker`` records the trail while a navigation behavior runs in
+``RECORD_PATH`` mode and publishes it on ``odom_tracker_path``;
+``UndoPathGlobalPlanner`` (in the Nav2 planner server) replays the trail in
+reverse as the global plan; and ``BackwardLocalPlanner`` follows it driving
+backwards while the tracker consumes the trail behind the robot
+(``CLEAR_PATH`` mode).
+
+The behavior takes optional ``CbUndoPathBackwardsOptions``:
+
+.. code-block:: c++
+
+   cl_nav2z::CbUndoPathBackwardsOptions options;
+   options.undoControllerName_ = "UndoBackwardLocalPlanner";        // controller instance
+   options.goalCheckerId_ = "undo_path_backwards_goal_checker";     // goal checker instance
+   configure_orthogonal<OrNavigation, CbUndoPathBackwards>(options);
+
+**Required Nav2 configuration.** Undo navigation cannot work with a stock Nav2
+setup. The parameters file must register the SMACC2 plugins, and the behavior
+tree must contain the selector nodes that ``CpPlannerSwitcher`` and
+``CpGoalCheckerSwitcher`` publish to:
+
+- ``planner_server.planner_plugins`` must include
+  ``undo_path_global_planner::UndoPathGlobalPlanner``
+- ``controller_server.controller_plugins`` must include a
+  ``backward_local_planner::BackwardLocalPlanner`` instance
+- ``controller_server.goal_checker_plugins`` must include the goal checker id
+  the behavior selects (default ``undo_path_backwards_goal_checker``)
+- the ``bt_navigator`` behavior tree must contain ``PlannerSelector``,
+  ``ControllerSelector`` and ``GoalCheckerSelector`` nodes; Spin/BackUp
+  recoveries should be omitted (they drive the robot off the recorded trail)
+
+**Curved paths.** Two settings matter when the recorded path is not a straight
+line. First, the odom tracker's clearing angular gate must be disabled
+(recorded headings vary along a curve, and trail consumption stalls otherwise):
+
+.. code-block:: yaml
+
+   # parameters on the state machine node
+   clear_point_distance_threshold: 0.1
+   clear_angular_distance_threshold: 3.14
+
+Second, the backward controller should run its free navigation mode
+(``pure_spinning_straight_line_mode: false``) for continuous arc steering; the
+straight-line-and-spin mode is intended for straight retraces. The
+``initial_rotation_alpha_error_threshold`` parameter (radians) makes the
+controller spin in place to align before translating whenever its backward
+heading diverges from the path — without it, a misaligned approach can orbit
+the goal indefinitely.
+
+**Chained undo (path stack).** Each navigation behavior pushes the previous
+trail onto the odom tracker's path stack; ``CbUndoPathBackwards`` pops the
+stack on success, restoring the previous trail. Running two navigations and
+then two undo states therefore retraces both legs in reverse order. The
+intermediate undo state of a chain must **not** call
+``odomTracker->clearPath()`` on exit — that would destroy the just-popped
+trail. Only the final undo of a chain clears.
+
+**Events.** React to the state-scoped behavior events in transition tables:
+
+.. code-block:: c++
+
+   Transition<EvCbSuccess<CbUndoPathBackwards, OrNavigation>, StNext, SUCCESS>,
+   Transition<EvCbFailure<CbUndoPathBackwards, OrNavigation>, StRecover, ABORT>
+
+The machine-scoped ``EvActionSucceeded<ClNav2Z, ...>`` events also fire, but
+they can survive a state transition and trigger spuriously in the next state;
+prefer ``EvCbSuccess``/``EvCbFailure``.
+
+A complete working reference — single curved undo, chained double undo, a
+radial pattern and an F pattern, with a ready-made Nav2 configuration and
+selector behavior tree — is the ``sm_nav2_gazebo_test_2`` package in
+``smacc2_sm_reference_library``.
 
 Writing Your Own Behavior
 ~~~~~~~~~~~~~~~~~~~~~~~~~~

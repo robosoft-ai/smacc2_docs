@@ -207,3 +207,12 @@ Next Steps
 ----------
 
 In :doc:`tutorial-5-client-behaviors` you will learn how to write your own client behaviors, both synchronous and asynchronous.
+
+For a more advanced navigation mission, see ``sm_nav2_gazebo_test_2`` in
+``smacc2_sm_reference_library``: it demonstrates **undo path backwards
+navigation** (the robot retraces its recorded path exactly, including curved
+paths and chained multi-leg undos through the odom tracker path stack), plus
+radial and F coverage patterns built with hierarchical superstates. It ships
+its own Nav2 configuration with the SMACC2 planner/controller plugins — see
+the Undo Navigation section of the :doc:`Nav2 how-to </how-to/how-to-nav2>`
+for what that configuration does.
