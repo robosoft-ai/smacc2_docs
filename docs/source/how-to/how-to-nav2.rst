@@ -322,9 +322,18 @@ orthogonal must create the matching action client component, e.g.
      - Drive forward on the current heading, collision-checked; aborts
        (``EvCbFailure``) if an obstacle blocks the path
 
+``CbAssistedTeleop`` wraps the ``/assisted_teleop`` action the same way:
+teleop velocity commands published on ``cmd_vel_teleop`` are projected through
+the local costmap and clamped before a collision. The wrapper reports the time
+allowance expiring as ``EvCbSuccess`` (the window running its course is this
+action's normal ending). Paired with cl_keyboard's ``CbKeyboardTwistTeleop``
+(arrow keys to Twist, with a configurable idle push for unattended missions),
+a state machine can offer live collision-guarded keyboard driving - see
+``StAssistedTeleopGuard`` in ``sm_nav2_gazebo_test_3``.
+
 See ``sm_nav2_gazebo_test_3`` in the reference library for a mission built
 from these primitives, including an intentional collision abort handled
-through ``EvCbFailure``.
+through ``EvCbFailure`` and the assisted-teleop finale.
 
 Monitoring Behaviors
 ^^^^^^^^^^^^^^^^^^^^^
