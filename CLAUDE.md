@@ -112,7 +112,7 @@ This site follows the [Diátaxis framework](https://diataxis.fr/) — tutorials,
 
 ### Core Client Behaviors & Components
 
-The SMACC2 core library includes reusable client behaviors at `smacc2/include/smacc2/client_behaviors/` (cb_call_service, cb_ros_launch, cb_sequence, cb_sleep_for, cb_wait_action_server, cb_wait_topic, cb_wait_topic_message, cb_subscription_callback_base, cb_service_server_callback_base, cb_wait_node). These are not tied to any specific client library and can be used in any state machine. Documentation for these should be included in the tutorials and/or a dedicated reference section.
+The SMACC2 core library includes reusable client behaviors at `smacc2/include/smacc2/client_behaviors/` (cb_call_service, cb_ros_launch_2, cb_sequence, cb_sleep_for, cb_wait_action_server, cb_wait_topic, cb_wait_topic_message, cb_subscription_callback_base, cb_service_server_callback_base, cb_wait_node). These are not tied to any specific client library and can be used in any state machine. Documentation for these should be included in the tutorials and/or a dedicated reference section.
 
 ## Known Issues
 
