@@ -217,7 +217,7 @@ SMACC2 ships with reusable behaviors that work with any client:
    * - ``CbSequence``
      - Async
      - Chain multiple behaviors to run in sequence within one state
-   * - ``CbRosLaunch``
+   * - ``CbRosLaunch2``
      - Async
      - Launch a ROS 2 package (detached or behavior-scoped)
    * - ``CbWaitNode``

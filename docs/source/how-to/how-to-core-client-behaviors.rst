@@ -1,6 +1,6 @@
 .. title:: How to Use Core Client Behaviors
 .. meta::
-   :description: Reference for SMACC2 core client behaviors — CbSequence, CbSleepFor, CbCallService, CbWaitTopicMessage, CbRosLaunch, CbWaitNode, and more.
+   :description: Reference for SMACC2 core client behaviors — CbSequence, CbSleepFor, CbCallService, CbWaitTopicMessage, CbRosLaunch2, CbWaitNode, and more.
 
 How to Use Core Client Behaviors
 ==================================
@@ -177,26 +177,26 @@ Base class for service server behaviors. Override ``onServiceRequestReceived()``
      }
    };
 
-CbRosLaunch
-------------
+CbRosLaunch2
+-------------
 
-**Header:** ``smacc2/client_behaviors/cb_ros_launch.hpp``
+**Header:** ``smacc2/client_behaviors/cb_ros_launch_2.hpp``
 
 Launches a ROS 2 package with configurable lifetime mode.
 
 .. code-block:: c++
 
-   #include <smacc2/client_behaviors/cb_ros_launch.hpp>
+   #include <smacc2/client_behaviors/cb_ros_launch_2.hpp>
 
    static void staticConfigure()
    {
      // Detached: process outlives the behavior
-     configure_orthogonal<OrLaunch, CbRosLaunch>(
-       "my_package", "my_launch.py", RosLaunchMode::DETACHED);
+     configure_orthogonal<OrLaunch, CbRosLaunch2>(
+       "my_package", "my_launch.py", RosLaunchMode::LAUNCH_DETTACHED);
 
      // Behavior-scoped: process stops when behavior exits
-     configure_orthogonal<OrLaunch, CbRosLaunch>(
-       "my_package", "my_launch.py", RosLaunchMode::CLIENT_BEHAVIOR_LIFETIME);
+     configure_orthogonal<OrLaunch, CbRosLaunch2>(
+       "my_package", "my_launch.py", RosLaunchMode::LAUNCH_CLIENT_BEHAVIOR_LIFETIME);
    }
 
 CbWaitNode
